@@ -1,0 +1,12 @@
+variant: default
+variant_key: default
+modality: wifi
+description: Default WidarGait dataset identity.
+reader:
+  channel: 36
+runtime_profile:
+  target_length: 256
+paths:
+  raw_dir: CSI
+  processed_dir: CSI_Processed
+  metadata_csv: metas.csv

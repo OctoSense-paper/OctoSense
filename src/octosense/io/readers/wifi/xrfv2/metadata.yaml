@@ -1,0 +1,9 @@
+reader_id: wifi/xrfv2
+modality: wifi
+device_family: xrfv2
+reader_class: XRFV2Reader
+hardware_vendor: Intel
+hardware_family: XRFV2 WiFi
+source_type: hdf5_clip
+notes:
+  - Parses XRFV2 WiFi clips from processed and raw WWADL-style HDF5 layouts.

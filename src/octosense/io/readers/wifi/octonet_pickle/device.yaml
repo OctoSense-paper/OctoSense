@@ -1,0 +1,22 @@
+device_name: AX200
+reader_version: "1.0"
+file_extensions:
+  - .pickle
+  - .pkl
+pilot_indices_by_num_subcarriers:
+  114:
+    - 5
+    - 33
+    - 47
+    - 66
+    - 80
+    - 108
+merged_extra_fields:
+  - pilot_indices
+  - pilot_interpolated
+  - sample_id
+  - sample_path
+  - user_id
+  - timestamp
+  - raw_shape
+  - raw_dtype

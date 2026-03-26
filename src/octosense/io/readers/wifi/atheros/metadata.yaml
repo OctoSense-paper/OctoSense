@@ -1,0 +1,9 @@
+reader_id: wifi/atheros
+modality: wifi
+device_family: atheros
+reader_class: AtherosReader
+hardware_vendor: Qualcomm Atheros
+hardware_family: ath9k CSI Tool
+source_type: binary_packet_stream
+notes:
+  - Supports both little-endian and big-endian Atheros CSI captures.

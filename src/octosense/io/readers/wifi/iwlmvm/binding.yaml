@@ -1,0 +1,122 @@
+axes:
+  time:
+    target: octo.common.axis.time
+    status: exact
+  subc:
+    target: octo.wifi.axis.subc
+    status: exact
+  tx:
+    target: octo.common.axis.tx
+    status: exact
+  rx:
+    target: octo.common.axis.rx
+    status: exact
+fields:
+  timestamp_nano:
+    target: vendor.iwlmvm.field.timestamp_nano
+    status: exact
+    source_namespace: vendor.iwlmvm
+    description: Outer ASCII timestamp counter preserved on the explicit timestamp_nano surface.
+  timestamp:
+    target: octo.common.field.timestamp_start
+    status: computed
+    source_namespace: vendor.iwlmvm
+    scale: 1.0e-9
+    description: Inner IWLMVM packet timestamp normalized into canonical acquisition time in seconds.
+  csi_size:
+    target: octo.wifi.field.csi_length
+    status: exact
+    description: Raw IWLMVM CSI payload size in bytes.
+  ftm_clock:
+    target: octo.wifi.field.ftm_clock
+    status: exact
+    description: Fine timing measurement clock value reported by the IWLMVM header.
+  n_rx:
+    target: octo.wifi.field.num_rx
+    status: exact
+    description: Number of receive chains reported by the IWLMVM header.
+  n_tx:
+    target: octo.wifi.field.num_tx
+    status: exact
+    description: Number of transmit chains reported by the IWLMVM header.
+  n_link:
+    target: octo.wifi.field.n_link
+    status: exact
+    description: Number of wireless links encoded in the IWLMVM packet header.
+  n_subc:
+    target: octo.wifi.field.num_subcarriers
+    status: exact
+    description: Number of CSI subcarriers reported by the IWLMVM header.
+  rssi_a:
+    target: octo.wifi.field.rssi_a
+    status: exact
+    description: Intel AX-series RSSI measurement for receive chain A.
+  rssi_b:
+    target: octo.wifi.field.rssi_b
+    status: exact
+    description: Intel AX-series RSSI measurement for receive chain B.
+  mac_src:
+    target: octo.wifi.field.mac_src
+    status: computed
+    description: Source MAC address normalized inside reader.py into canonical colon-separated form.
+  seq:
+    target: octo.wifi.field.sequence_number
+    status: exact
+    description: Packet sequence number reported by the IWLMVM header.
+  rate_flags:
+    target: octo.wifi.field.rate_flags
+    status: exact
+    description: Raw packed rate bitfield reported by the IWLMVM header.
+  rate_format:
+    target: octo.wifi.field.rate_format
+    status: computed
+    source_namespace: reader.iwlmvm
+    description: Decoded PHY rate-format label derived from the IWLMVM rate bitfield.
+  bandwidth:
+    target: octo.common.field.bandwidth
+    status: computed
+    source_namespace: reader.iwlmvm
+    scale: 1.0e6
+    description: Decoded channel bandwidth in MHz derived from the IWLMVM rate bitfield.
+  mcs:
+    target: octo.wifi.field.mcs
+    status: computed
+    source_namespace: reader.iwlmvm
+    description: Decoded modulation and coding scheme index from the IWLMVM rate bitfield.
+  antenna_a:
+    target: octo.wifi.field.antenna_a
+    status: computed
+    source_namespace: reader.iwlmvm
+    description: Boolean receive-chain-A antenna flag derived from the IWLMVM rate bitfield.
+  antenna_b:
+    target: octo.wifi.field.antenna_b
+    status: computed
+    source_namespace: reader.iwlmvm
+    description: Boolean receive-chain-B antenna flag derived from the IWLMVM rate bitfield.
+  ldpc:
+    target: octo.wifi.field.ldpc
+    status: computed
+    source_namespace: reader.iwlmvm
+    description: LDPC flag derived from the IWLMVM rate bitfield.
+  ss:
+    target: octo.wifi.field.spatial_stream_selector
+    status: computed
+    source_namespace: reader.iwlmvm
+    description: Spatial-stream count derived from the IWLMVM rate bitfield.
+  beamforming:
+    target: octo.wifi.field.beamforming
+    status: computed
+    source_namespace: reader.iwlmvm
+    description: Beamforming flag derived from the IWLMVM rate bitfield.
+  dimension_names:
+    target: octo.wifi.representation.dimension_names
+    status: exact
+    description: Reader-side raw CSI dimension order before tensor canonicalization.
+  data_format:
+    target: octo.wifi.representation.data_format
+    status: exact
+    description: Reader-side raw CSI numeric format before tensor canonicalization.
+  csi_matrix:
+    target: octo.wifi.tensor.csi
+    status: exact
+    description: Raw IWLMVM CSI matrix before tensorization.

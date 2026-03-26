@@ -1,0 +1,54 @@
+dataset_id: xrfv2
+display_name: XRF V2
+modalities:
+  - wifi
+supported_variants:
+  - clip
+access:
+  kind: public_download
+  public_urls:
+    - https://www.kaggle.com/datasets/anonymous20251/xrfv2dataset
+  note: >-
+    The currently supported OctoSense branch is the WiFi release on Kaggle and SDP.
+    OctoSense uses the Kaggle entry for automated downloads when the kaggle CLI
+    is available.
+license:
+  name: MIT License
+  spdx_id: MIT
+  source_url: https://github.com/aiotgroup/XRFV2
+  redistribution_allowed: true
+  note: >-
+    The official XRF V2 repository declares the dataset/project under the MIT
+    License and lists the Kaggle dataset as the public download source.
+download:
+  allow_automated_download: true
+  requires_explicit_opt_in: true
+  supported_parts: []
+  sources:
+    - kind: kaggle
+      url: https://www.kaggle.com/datasets/anonymous20251/xrfv2dataset
+      note: >-
+        XRF V2 automated download uses the public Kaggle dataset entry referenced
+        by the official project.
+  note: >-
+    XRF V2 WiFi can be prepared automatically because the official repository
+    documents both the Kaggle source and an explicit redistribution-allowed license.
+paper:
+  title: "XRF V2: A Dataset for Action Summarization with Wi-Fi Signals, and IMUs in Phones, Watches, Earbuds, and Glasses"
+  url: https://doi.org/10.1145/3749521
+  authors:
+    - Bo Lan
+    - Pei Li
+    - Jiaxi Yin
+    - Yunpeng Song
+    - Ge Wang
+    - Han Ding
+    - Jinsong Han
+    - Fei Wang
+  citation_text: >-
+    Lan, B., Li, P., Yin, J., Song, Y., Wang, G., Ding, H., Han, J., and Wang, F.
+    XRF V2: A Dataset for Action Summarization with Wi-Fi Signals, and IMUs in Phones,
+    Watches, Earbuds, and Glasses. Proceedings of the ACM on Interactive, Mobile,
+    Wearable and Ubiquitous Technologies, 2025.
+storage:
+  default_root_subdir: xrfv2

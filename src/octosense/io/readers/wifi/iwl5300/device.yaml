@@ -1,0 +1,83 @@
+device_name: IWL5300
+reader_version: "1.0"
+file_extensions:
+  - .dat
+valid_code: 187
+header_struct: "<LHHBBBBBbBBHH"
+size_struct: ">H"
+code_struct: "B"
+num_subcarriers: 30
+timestamp_unit_s: 1.0e-6
+base_subcarrier_spacing_hz: 312500.0
+rate_ht_msk: 256
+rate_ht40_msk: 2048
+subcarrier_spacing_hz:
+  narrow_78k: 78125.0
+  group30_20mhz: 625000.0
+  group30_40mhz: 1250000.0
+subcarrier_indices_20mhz:
+  - -28
+  - -26
+  - -24
+  - -22
+  - -20
+  - -18
+  - -16
+  - -14
+  - -12
+  - -10
+  - -8
+  - -6
+  - -4
+  - -2
+  - -1
+  - 1
+  - 3
+  - 5
+  - 7
+  - 9
+  - 11
+  - 13
+  - 15
+  - 17
+  - 19
+  - 21
+  - 23
+  - 25
+  - 27
+  - 28
+subcarrier_indices_40mhz:
+  - -58
+  - -54
+  - -50
+  - -46
+  - -42
+  - -38
+  - -34
+  - -30
+  - -26
+  - -22
+  - -18
+  - -14
+  - -10
+  - -6
+  - -2
+  - 2
+  - 6
+  - 10
+  - 14
+  - 18
+  - 22
+  - 26
+  - 30
+  - 34
+  - 38
+  - 42
+  - 46
+  - 50
+  - 54
+  - 58
+merged_extra_fields:
+  - dimension_names
+  - data_format
+  - iwl5300_timestamp_low

@@ -1,0 +1,8 @@
+variant: lab-uplink
+variant_key: lab-uplink
+modality: wifi
+environment: lab
+direction: uplink
+relpath: csi/dataset_lab_276_ul.mat
+preferred_key: csiu_
+class_count: 276

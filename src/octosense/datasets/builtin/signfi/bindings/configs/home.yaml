@@ -1,0 +1,8 @@
+variant: home
+variant_key: home
+modality: wifi
+environment: home
+direction: downlink
+relpath: csi/dataset_home_276.mat
+preferred_key: csid_
+class_count: 276

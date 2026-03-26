@@ -1,0 +1,38 @@
+device_name: IWLMVM
+reader_version: "1.0"
+file_extensions:
+  - .txt
+  - .bin
+  - .dat
+length_struct: ">19sIII"
+header_struct: "<I4xI34xBBxB2xI4xII6s2xB11xII"
+timestamp_unit_s: 1.0e-9
+bit_fields:
+  ht_mcs_code_mask: 7
+  mod_type_pos: 8
+  mod_type_mask: 1792
+  chan_width_pos: 11
+  chan_width_mask: 14336
+  ant_a_pos: 14
+  ant_a_mask: 16384
+  ant_b_pos: 15
+  ant_b_mask: 32768
+  ldpc_pos: 16
+  ldpc_mask: 65536
+  ss_pos: 16
+  ss_mask: 65536
+  beamforming_pos: 16
+  beamforming_mask: 65536
+channel_width_mhz_by_flag:
+  0: 20
+  1: 40
+  2: 80
+  3: 160
+  4: 320
+rate_format_by_mod_type:
+  0: CCK
+  1: LEGACY_OFDM
+  2: HT
+  3: VHT
+  4: HE
+  5: EHT

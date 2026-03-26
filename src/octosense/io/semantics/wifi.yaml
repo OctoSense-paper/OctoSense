@@ -1,0 +1,349 @@
+axes:
+  octo.wifi.axis.subc:
+    code: SUBC
+    preferred_name: subc
+    unit: index
+    category: frequency_bin
+    status: stable
+    aliases: [subcarrier]
+    description: OFDM subcarrier axis for WiFi CSI.
+fields:
+  octo.wifi.field.channel:
+    code: CHANNEL
+    preferred_name: channel
+    category: rf_channel
+    status: stable
+    description: IEEE 802.11 channel number used for the capture.
+  octo.wifi.field.subcarrier_spacing:
+    code: SUBCARRIER_SPACING
+    preferred_name: subcarrier_spacing
+    category: physical_quantity
+    unit: Hz
+    status: stable
+    aliases: [subcarrier_spacing_hz]
+    description: Spacing between adjacent CSI subcarriers in Hz.
+  vendor.atheros.field.timestamp_raw:
+    code: ATH_TIMESTAMP_RAW
+    preferred_name: atheros_timestamp_raw
+    category: timing_metadata
+    unit: tick
+    status: vendor_extension
+    source_namespace: vendor.atheros
+    description: Raw Atheros packet timestamp counter before conversion into canonical seconds.
+  vendor.iwl5300.field.timestamp_low:
+    code: IWL5300_TIMESTAMP_LOW
+    preferred_name: iwl5300_timestamp_low
+    category: timing_metadata
+    unit: tick
+    status: vendor_extension
+    source_namespace: vendor.iwl5300
+    description: Raw Intel 5300 timestamp counter before conversion into canonical seconds.
+  vendor.iwlmvm.field.timestamp_nano:
+    code: IWLMVM_TIMESTAMP_NANO
+    preferred_name: iwlmvm_timestamp_nano
+    category: timing_metadata
+    unit: ns
+    status: vendor_extension
+    source_namespace: vendor.iwlmvm
+    description: Outer IWLMVM ASCII timestamp counter retained as a reader-specific timing field.
+  vendor.esp32.field.timestamp_local_counter:
+    code: ESP32_TIMESTAMP_LOCAL_COUNTER
+    preferred_name: timestamp_local_counter
+    category: timing_metadata
+    unit: tick
+    status: vendor_extension
+    source_namespace: vendor.esp32
+    description: Raw ESP32 local timestamp counter before conversion into canonical seconds.
+  octo.wifi.field.index:
+    code: INDEX
+    preferred_name: index
+    category: record_index
+    status: stable
+    description: Reader-specific frame or packet index exposed by the capture tool.
+  octo.wifi.field.sequence_number:
+    code: SEQUENCE_NUMBER
+    preferred_name: seq
+    category: packet_identifier
+    status: stable
+    aliases: [sequence_number]
+    description: Hardware or tool sequence identifier for one capture.
+  octo.wifi.field.csi_length:
+    code: CSI_LENGTH
+    preferred_name: csi_length
+    category: payload_measure
+    status: stable
+    description: Raw CSI payload length reported by the reader header.
+  octo.wifi.field.rssi:
+    code: RSSI
+    preferred_name: rssi
+    category: signal_strength
+    status: stable
+    description: Receive signal strength indicator.
+  octo.wifi.field.rssi_a:
+    code: RSSI_A
+    preferred_name: rssi_a
+    category: signal_strength
+    status: stable
+    description: Receive signal strength for chain A.
+  octo.wifi.field.rssi_b:
+    code: RSSI_B
+    preferred_name: rssi_b
+    category: signal_strength
+    status: stable
+    description: Receive signal strength for chain B.
+  octo.wifi.field.rssi_c:
+    code: RSSI_C
+    preferred_name: rssi_c
+    category: signal_strength
+    status: stable
+    description: Receive signal strength for chain C.
+  octo.wifi.field.noise:
+    code: NOISE
+    preferred_name: noise
+    category: signal_quality
+    status: stable
+    description: Receiver noise or noise floor measurement.
+  octo.wifi.field.error_info:
+    code: ERROR_INFO
+    preferred_name: error_info
+    category: device_status
+    status: stable
+    description: Reader-specific error or status bits attached to one capture.
+  octo.wifi.field.num_subcarriers:
+    code: NUM_SUBCARRIERS
+    preferred_name: num_subc
+    category: shape_metadata
+    status: stable
+    aliases: [num_subcarriers]
+    description: Number of CSI subcarriers represented by one capture.
+  octo.wifi.field.num_rx:
+    code: NUM_RX
+    preferred_name: num_rx
+    category: shape_metadata
+    status: stable
+    description: Number of receive antennas or chains reported for one capture.
+  octo.wifi.field.num_tx:
+    code: NUM_TX
+    preferred_name: num_tx
+    category: shape_metadata
+    status: stable
+    description: Number of transmit antennas or spatial streams reported for one capture.
+  octo.wifi.field.payload_size:
+    code: PAYLOAD_SIZE
+    preferred_name: payload_size
+    category: payload_measure
+    status: stable
+    description: Payload length in bytes reported by the hardware or capture tool.
+  octo.wifi.field.agc:
+    code: AGC
+    preferred_name: agc
+    category: gain_control
+    status: stable
+    description: Automatic gain control value reported for one capture.
+  octo.wifi.field.antenna_selection:
+    code: ANTENNA_SELECTION
+    preferred_name: antenna_selection
+    category: antenna_metadata
+    status: stable
+    description: Hardware antenna-selection bitfield before any permutation decoding.
+  octo.wifi.field.antenna_permutation:
+    code: ANTENNA_PERMUTATION
+    preferred_name: antenna_permutation
+    category: antenna_metadata
+    status: stable
+    description: Reader-specific antenna permutation or selection encoding.
+  octo.wifi.field.mac_src:
+    code: MAC_ADDR
+    preferred_name: mac_src
+    category: address
+    status: stable
+    aliases: [mac_addr, source_mac, tx_mac]
+    description: Source MAC address associated with one capture.
+  octo.wifi.field.mac_dst:
+    code: MAC_DST
+    preferred_name: mac_dst
+    category: address
+    status: stable
+    aliases: [destination_mac]
+    description: Destination MAC address associated with one capture.
+  octo.wifi.field.mac_ap:
+    code: MAC_AP
+    preferred_name: mac_ap
+    category: address
+    status: stable
+    aliases: [ap_mac, ap_macaddr]
+    description: Access-point MAC address associated with one capture.
+  octo.wifi.field.data_rate:
+    code: DATA_RATE
+    preferred_name: data_rate
+    category: phy_metadata
+    status: stable
+    description: PHY data-rate or modulation-specific rate metadata.
+  octo.wifi.field.frame_number:
+    code: FRAME_NUMBER
+    preferred_name: frame_number
+    category: packet_identifier
+    status: stable
+    description: Reader-reported frame counter for one capture.
+  octo.wifi.field.frame_type:
+    code: FRAME_TYPE
+    preferred_name: frame_type
+    category: phy_metadata
+    status: stable
+    description: 802.11 frame type label emitted by the capture tool.
+  octo.wifi.field.signal_mode:
+    code: SIGNAL_MODE
+    preferred_name: signal_mode
+    category: phy_metadata
+    status: stable
+    description: Reader-reported PHY signal mode or modulation family flag.
+  octo.wifi.field.fft:
+    code: FFT
+    preferred_name: fft
+    category: device_status
+    status: stable
+    description: FFT-related gain or scaling metadata reported by the device.
+  octo.wifi.field.rx_state:
+    code: RX_STATE
+    preferred_name: rx_state
+    category: device_status
+    status: stable
+    description: Receiver-state bits exposed by the hardware or firmware.
+  octo.wifi.field.first_word:
+    code: FIRST_WORD
+    preferred_name: first_word
+    category: device_status
+    status: stable
+    description: Device-specific first-word flag or marker associated with one capture.
+  octo.wifi.field.n_link:
+    code: N_LINK
+    preferred_name: n_link
+    category: topology_metadata
+    status: stable
+    description: Number of wireless links encoded in one packet record.
+  octo.wifi.field.format:
+    code: FORMAT
+    preferred_name: format
+    category: format_metadata
+    status: stable
+    description: Reader-specific packet format identifier.
+  octo.wifi.field.format_type:
+    code: FORMAT_TYPE
+    preferred_name: format_type
+    category: format_metadata
+    status: stable
+    description: Reader-specific packet format subtype identifier.
+  octo.wifi.field.ftm_clock:
+    code: FTM_CLOCK
+    preferred_name: ftm_clock
+    category: timing_metadata
+    status: stable
+    description: Fine timing measurement clock value associated with one capture.
+  octo.wifi.field.rate_flags:
+    code: RATE_FLAGS
+    preferred_name: rate_flags
+    category: phy_metadata
+    status: stable
+    description: Packed PHY rate bitfield reported by the capture tool.
+  octo.wifi.field.rate_format:
+    code: RATE_FORMAT
+    preferred_name: rate_format
+    category: phy_metadata
+    status: stable
+    description: Reader-reported rate-format enumeration or label.
+  octo.wifi.field.mcs:
+    code: MCS
+    preferred_name: mcs
+    category: phy_metadata
+    status: stable
+    description: Modulation and coding scheme index reported for one capture.
+  octo.wifi.field.antenna_a:
+    code: ANTENNA_A
+    preferred_name: antenna_a
+    category: antenna_metadata
+    status: stable
+    description: Reader-specific per-chain antenna flag or bitfield for chain A.
+  octo.wifi.field.antenna_b:
+    code: ANTENNA_B
+    preferred_name: antenna_b
+    category: antenna_metadata
+    status: stable
+    description: Reader-specific per-chain antenna flag or bitfield for chain B.
+  octo.wifi.field.ldpc:
+    code: LDPC
+    preferred_name: ldpc
+    category: phy_metadata
+    status: stable
+    description: LDPC flag reported by the capture tool.
+  octo.wifi.field.spatial_stream_selector:
+    code: SS
+    preferred_name: ss
+    category: phy_metadata
+    status: stable
+    description: Spatial-stream count or selector reported by the capture tool.
+  octo.wifi.field.beamforming:
+    code: BEAMFORMING
+    preferred_name: beamforming
+    category: phy_metadata
+    status: stable
+    description: Beamforming flag reported by the capture tool.
+  octo.wifi.field.chip_type:
+    code: CHIP_TYPE
+    preferred_name: chip_type
+    category: vendor_metadata
+    status: stable
+    description: Hardware chip identifier associated with the capture.
+  octo.wifi.field.core_num:
+    code: CORE_NUM
+    preferred_name: core_num
+    category: vendor_metadata
+    status: stable
+    description: Hardware core index associated with the capture.
+  vendor.nexmon.field.frame_control:
+    code: FRAME_CONTROL
+    preferred_name: frame_control
+    category: vendor_metadata
+    status: vendor_extension
+    source_namespace: vendor.nexmon
+    description: Raw 802.11 frame-control byte retained only as a Nexmon vendor-extension field.
+  vendor.nexmon.field.spatial_stream:
+    code: SPATIAL_STREAM
+    preferred_name: spatial_stream
+    category: vendor_metadata
+    status: vendor_extension
+    source_namespace: vendor.nexmon
+    description: Broadcom spatial-stream selector retained only as a Nexmon vendor-extension field.
+tensors:
+  octo.wifi.tensor.csi:
+    code: DATA
+    preferred_name: csi
+    category: raw_signal
+    dtype: complex64
+    status: stable
+    aliases: [data]
+    axis_semantics:
+      - octo.common.axis.time
+      - octo.wifi.axis.subc
+      - octo.common.axis.tx
+      - octo.common.axis.rx
+    description: Canonical WiFi CSI tensor.
+provenance:
+  octo.wifi.provenance.device_type:
+    code: DEVICE_TYPE
+    preferred_name: device_type
+    category: device_identity
+    status: stable
+    description: Hardware device-type label emitted by the capture tool.
+representation:
+  octo.wifi.representation.dimension_names:
+    code: DIMENSION_NAMES
+    preferred_name: dimension_names
+    category: layout_metadata
+    status: stable
+    description: Ordered signal-dimension labels exported by a reader-side packet parser.
+  octo.wifi.representation.data_format:
+    code: DATA_FORMAT
+    preferred_name: data_format
+    category: layout_metadata
+    status: stable
+    description: Reader-declared data layout or numeric packing description for the CSI payload.

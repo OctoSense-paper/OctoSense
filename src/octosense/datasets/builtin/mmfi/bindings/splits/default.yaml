@@ -1,0 +1,10 @@
+# Canonical split selector id. Callers must still pass split_scheme="default";
+# this file does not authorize implicit default or singleton fallback.
+name: default
+strategy: sorted_group_partition
+group_field: subject
+partitions:
+  - split: train
+    ratio: 0.8
+  - split: val
+    ratio: 0.2

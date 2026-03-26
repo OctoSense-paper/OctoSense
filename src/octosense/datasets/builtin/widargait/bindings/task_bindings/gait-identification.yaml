@@ -1,0 +1,22 @@
+name: gait-identification
+task_id: gait/identification
+label_space:
+  vocabulary:
+    source: metadata_rows.user_id
+  id_field: label
+  name_field: user_id
+target_binding:
+  source: metadata_rows
+  fields:
+    identity_label: label
+  shape_source:
+    identity_label:
+      source: inline
+      value: []
+leakage_keys:
+  - date
+  - user_id
+  - track_id
+  - rep_id
+supported_variants:
+  - default

@@ -1,0 +1,32 @@
+schema_version: 1
+dataset_id: hupr
+fields:
+  summary: Millimeter-wave human pose estimation benchmark dataset.
+  rf_profile:
+    modality: mmwave
+    center_freq_hz: 77000000000.0
+    bandwidth_hz: 4000000000.0
+    reader: mmwave/hupr_radar_map
+    capture_device: AWR1843
+  variant_policy:
+    selection_contract: explicit_binding
+  signal_profile:
+    signal_modality: mmwave
+    device_type: mmWave
+    capture_device: AWR1843
+    reader_id: mmwave/hupr_radar_map
+    axis_schema:
+      - range
+      - azimuth
+      - elevation
+      - sensor
+    coord_units:
+      range: bin
+      azimuth: bin
+      elevation: bin
+      sensor: index
+  label_semantics:
+    kind: pose_estimation
+    target_schema:
+      joints: [14, 2]
+      bbox: [4]

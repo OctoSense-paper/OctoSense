@@ -1,0 +1,23 @@
+variant: sample
+variant_key: sample
+modality: wifi
+reader:
+  channel: 165
+paths:
+  metadata_csv: metas.csv
+  raw_dir: CSI
+dates:
+  - 20181211
+gestures:
+  - Push&Pull
+  - Sweep
+  - Clap
+  - Slide
+  - Draw-O(Horizontal)
+  - Draw-Zigzag(Horizontal)
+skip_list:
+  - 20181211/user9/user9-3-4-2-3
+  - 20181211/user9/user9-1-1-1-1
+  - 20181211/user8/user8-3-3-3-5
+  - 20181211/user8/user8-1-1-1-1
+  - 20181211/user9/user9-4-5-5-2

@@ -1,0 +1,13 @@
+variant: default
+variant_key: default
+modality: wifi
+description: Default FallDar dataset identity.
+reader:
+  channel: 36
+paths:
+  raw_dir: raw_data
+  metadata_csv: metas.csv
+csv_columns:
+  folder_name: Folder_name
+  fall_index: Fall_index
+  nonfall_index: Nonfall_index

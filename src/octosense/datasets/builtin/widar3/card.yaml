@@ -1,0 +1,130 @@
+dataset_id: widar3
+display_name: Widar3.0
+modalities:
+  - wifi
+supported_variants:
+  - g6
+  - sample
+access:
+  kind: public_download
+  public_urls:
+    - https://tns.thss.tsinghua.edu.cn/widar3.0/index.html
+    - https://ieee-dataport.org/open-access/widar-30
+    - ftp://166.111.80.127:40121/CSI/
+  note: >-
+    Widar3.0 is publicly listed through the project page, IEEE DataPort, and a
+    public FTP mirror. OctoSense prefers the public FTP mirror as the default
+    automated source and supports explicit `sample` and `full` preparation parts.
+license:
+  name: ""
+  spdx_id:
+  source_url:
+  redistribution_allowed: false
+  note: ""
+download:
+  allow_automated_download: true
+  requires_explicit_opt_in: true
+  handler: octosense.datasets.builtin.widar3.download:download_widar3_dataset
+  ftp_credentials:
+    username_env: OCTOSENSE_WIDAR3_FTP_USERNAME
+    password_env: OCTOSENSE_WIDAR3_FTP_PASSWORD
+    username: widarftp
+    password: widar2019
+  supported_parts:
+    - full
+    - sample
+  parts:
+    full:
+      payload:
+        variant: g6
+        dates:
+          - 20181109
+          - 20181112
+          - 20181115
+          - 20181116
+          - 20181117
+          - 20181118
+          - 20181121
+          - 20181127
+          - 20181128
+          - 20181130
+          - 20181204
+          - 20181205
+          - 20181208
+          - 20181209
+          - 20181211
+      sources:
+        - kind: ftp_archive
+          date: 20181109
+          url: ftp://166.111.80.127:40121/CSI/CSI_20181109.zip
+        - kind: ftp_archive
+          date: 20181112
+          url: ftp://166.111.80.127:40121/CSI/CSI_20181112.zip
+        - kind: ftp_archive
+          date: 20181115
+          url: ftp://166.111.80.127:40121/CSI/CSI_20181115.zip
+        - kind: ftp_archive
+          date: 20181116
+          url: ftp://166.111.80.127:40121/CSI/CSI_20181116.zip
+        - kind: ftp_archive
+          date: 20181117
+          url: ftp://166.111.80.127:40121/CSI/CSI_20181117.zip
+        - kind: ftp_archive
+          date: 20181118
+          url: ftp://166.111.80.127:40121/CSI/CSI_20181118.zip
+        - kind: ftp_archive
+          date: 20181121
+          url: ftp://166.111.80.127:40121/CSI/CSI_20181121.zip
+        - kind: ftp_archive
+          date: 20181127
+          url: ftp://166.111.80.127:40121/CSI/CSI_20181127.zip
+        - kind: ftp_archive
+          date: 20181128
+          url: ftp://166.111.80.127:40121/CSI/CSI_20181128.zip
+        - kind: ftp_archive
+          date: 20181130
+          url: ftp://166.111.80.127:40121/CSI/CSI_20181130.zip
+        - kind: ftp_archive
+          date: 20181204
+          url: ftp://166.111.80.127:40121/CSI/CSI_20181204.zip
+        - kind: ftp_archive
+          date: 20181205
+          url: ftp://166.111.80.127:40121/CSI/CSI_20181205.zip
+        - kind: ftp_archive
+          date: 20181208
+          url: ftp://166.111.80.127:40121/CSI/CSI_20181208.zip
+        - kind: ftp_archive
+          date: 20181209
+          url: ftp://166.111.80.127:40121/CSI/CSI_20181209.zip
+        - kind: ftp_archive
+          date: 20181211
+          url: ftp://166.111.80.127:40121/CSI/CSI_20181211.zip
+    sample:
+      payload:
+        variant: sample
+        dates:
+          - 20181211
+      sources:
+        - kind: ftp_archive
+          date: 20181211
+          url: ftp://166.111.80.127:40121/CSI/CSI_20181211.zip
+  note: >-
+    Widar3 download is automated through the public FTP mirror, but callers must
+    choose an explicit part. Use `sample` for the smallest 20181211 subset and
+    `full` for the complete FTP mirror.
+paper:
+  title: Zero-Effort Cross-Domain Gesture Recognition with Wi-Fi
+  url: https://dl.acm.org/doi/10.1145/3307334.3326084
+  authors:
+    - Yue Zheng
+    - Yi Zhang
+    - Kun Qian
+    - Guidong Zhang
+    - Yunhao Liu
+    - Chenshu Wu
+    - Zheng Yang
+  citation_text: >-
+    Zheng, Y., Zhang, Y., Qian, K., Zhang, G., Liu, Y., Wu, C., and Yang, Z.
+    Zero-Effort Cross-Domain Gesture Recognition with Wi-Fi. ACM MobiSys, 2019.
+storage:
+  default_root_subdir: widar3

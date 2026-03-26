@@ -1,0 +1,79 @@
+axes:
+  time:
+    target: octo.common.axis.time
+    status: exact
+  subc:
+    target: octo.wifi.axis.subc
+    status: exact
+  tx:
+    target: octo.common.axis.tx
+    status: exact
+  rx:
+    target: octo.common.axis.rx
+    status: exact
+fields:
+  dimension_names:
+    target: octo.wifi.representation.dimension_names
+    status: computed
+    description: Reader-declared axis order for the canonical Intel 5300 CSI tensor.
+  data_format:
+    target: octo.wifi.representation.data_format
+    status: computed
+    description: Reader-declared data layout for the canonical Intel 5300 CSI tensor.
+  timestamp:
+    target: octo.common.field.timestamp_start
+    status: computed
+    scale: 1.0e-6
+    description: Canonical Intel 5300 packet timestamp converted into seconds.
+  timestamp_low:
+    target: vendor.iwl5300.field.timestamp_low
+    status: exact
+    description: Intel 5300 packet timestamp counter before conversion into seconds.
+  bfee_count:
+    target: octo.wifi.field.index
+    status: exact
+    description: Intel 5300 beamforming entry sequence counter.
+  n_rx:
+    target: octo.wifi.field.num_rx
+    status: exact
+    description: Number of receive antennas reported in the packet header.
+  n_tx:
+    target: octo.wifi.field.num_tx
+    status: exact
+    description: Number of transmit antennas reported in the packet header.
+  rssi_a:
+    target: octo.wifi.field.rssi_a
+    status: exact
+    description: Intel 5300 RSSI measurement for receive chain A.
+  rssi_b:
+    target: octo.wifi.field.rssi_b
+    status: exact
+    description: Intel 5300 RSSI measurement for receive chain B.
+  rssi_c:
+    target: octo.wifi.field.rssi_c
+    status: exact
+    description: Intel 5300 RSSI measurement for receive chain C.
+  noise:
+    target: octo.wifi.field.noise
+    status: exact
+    description: Intel 5300 receiver noise estimate.
+  agc:
+    target: octo.wifi.field.agc
+    status: exact
+    description: Intel 5300 automatic gain control value for one packet.
+  antenna_sel:
+    target: octo.wifi.field.antenna_permutation
+    status: exact
+    description: Intel 5300 antenna selection bitfield used for permutation decoding.
+  length:
+    target: octo.wifi.field.payload_size
+    status: exact
+    description: Intel 5300 CSI payload length in bytes.
+  rate:
+    target: octo.wifi.field.data_rate
+    status: exact
+    description: Intel 5300 rate field from the packet header.
+  csi_matrix:
+    target: octo.wifi.tensor.csi
+    status: exact
+    description: Raw Intel 5300 CSI matrix before tensorization.

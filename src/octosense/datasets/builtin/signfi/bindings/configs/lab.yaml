@@ -1,0 +1,8 @@
+variant: lab
+variant_key: lab
+modality: wifi
+environment: lab
+direction: downlink
+relpath: csi/dataset_lab_276_dl.mat
+preferred_key: csid_
+class_count: 276

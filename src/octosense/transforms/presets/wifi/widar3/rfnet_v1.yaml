@@ -1,0 +1,54 @@
+preset_id: wifi/widar3/rfnet_v1
+metadata:
+  formats:
+    - POLAR
+defaults:
+  sample_rate: 1000
+  skip_reader_ids: []
+  apply_sample_zscore: false
+  temporal_bandpass_filter:
+    lowpass_cutoff_hz: 60.0
+    highpass_cutoff_hz: 2.0
+    lowpass_order: 6
+    highpass_order: 3
+contracts:
+  sequence_real:
+    axes:
+      - time
+      - feature
+    dtype_kind: real
+    fixed_sizes: {}
+    layout: BTF
+variants:
+  sequence_real:
+    steps:
+      - operator_id: SubcarrierL1Normalize
+        params:
+          skip_reader_ids: $skip_reader_ids
+      - operator_id: AdjacentRxConjugate
+        params:
+          skip_reader_ids: $skip_reader_ids
+      - operator_id: TemporalFilter
+        params:
+          sample_rate: $sample_rate
+          lowpass_cutoff_hz: $temporal_bandpass_filter.lowpass_cutoff_hz
+          highpass_cutoff_hz: $temporal_bandpass_filter.highpass_cutoff_hz
+          lowpass_order: $temporal_bandpass_filter.lowpass_order
+          highpass_order: $temporal_bandpass_filter.highpass_order
+          skip_reader_ids: $skip_reader_ids
+      - operator_id: AmplitudePhase
+      - enabled_if: $apply_sample_zscore
+        operator_id: SampleZScoreNormalize
+        params:
+          exclude_axes:
+            - feature
+      - operator_id: AutoAlign
+        params:
+          model_or_contract: $output_contract
+          time_axis: time
+          flatten_axes:
+            - subc
+            - tx
+            - rx
+            - feature
+          value: identity

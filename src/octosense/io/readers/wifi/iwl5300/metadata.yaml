@@ -1,0 +1,10 @@
+reader_id: wifi/iwl5300
+modality: wifi
+device_family: iwl5300
+reader_class: IWL5300Reader
+hardware_vendor: Intel
+hardware_family: IWL5300 CSI Tool
+source_type: binary_dat
+notes:
+  - Uses Intel 5300 CSI Tool binary captures.
+  - Antenna permutation rules are configured through reader-definition data.

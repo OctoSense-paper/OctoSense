@@ -1,0 +1,15 @@
+device_name: XRF55 WiFi
+reader_version: "1.0"
+file_extensions:
+  - .npy
+  - .npz
+  - .mat
+  - .h5
+  - .hdf5
+  - .pkl
+  - .pickle
+merged_extra_fields:
+  - sample_path
+  - source_format
+  - raw_shape
+  - raw_dtype

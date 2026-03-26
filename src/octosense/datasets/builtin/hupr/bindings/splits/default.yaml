@@ -1,0 +1,4 @@
+name: default
+strategy: sorted_group_partition
+group_field: file_index
+train_ratio: 0.8

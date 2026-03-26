@@ -1,0 +1,22 @@
+name: human-identification
+modality: wifi
+task_name: HumanIdentification
+task_id: gait/identification
+label_space:
+  vocabulary:
+    source: config.paths.label_mapping
+  id_field: label
+  name_field: label_name
+  value_fields:
+    - label_name
+    - label
+target_binding:
+  source: metadata_rows
+  fields:
+    identity_label: label
+  shape_source:
+    identity_label:
+      source: inline
+      value: []
+leakage_keys:
+  - user

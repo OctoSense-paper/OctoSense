@@ -1,0 +1,14 @@
+device_name: Wi-Fi
+reader_version: "1.0"
+file_extensions:
+  - .h5
+  - .hdf5
+merged_extra_fields:
+  - sample_path
+  - source_layout
+  - source_key
+  - base_index
+  - clip_start
+  - clip_end
+  - raw_shape
+  - raw_dtype

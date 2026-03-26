@@ -1,0 +1,9 @@
+reader_id: wifi/octonet_pickle
+modality: wifi
+device_family: octonet_pickle
+reader_class: OctonetPickleReader
+hardware_vendor: Intel
+hardware_family: AX200 pickle bundle
+source_type: pickle_bundle
+notes:
+  - Supports both builtin OctoNet WiFi pickles and the course multimodal bundle layout.

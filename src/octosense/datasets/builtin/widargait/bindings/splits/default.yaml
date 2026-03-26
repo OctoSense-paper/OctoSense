@@ -1,0 +1,4 @@
+name: default
+strategy: stratified_label
+train_ratio: 0.8
+seed: 41

@@ -1,0 +1,9 @@
+name: default
+strategy: metadata_declared_label
+split_field: split
+declared_splits:
+  required:
+    - train
+    - val
+  optional:
+    - test

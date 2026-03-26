@@ -1,0 +1,40 @@
+dataset_id: hupr
+display_name: HuPR
+modalities:
+  - mmwave
+supported_variants:
+  - default
+access:
+  kind: manual_only
+  public_urls:
+    - https://github.com/robert80203/HuPR-A-Benchmark-for-Human-Pose-Estimation-Using-Millimeter-Wave-Radar
+    - https://arxiv.org/abs/2210.12564
+  note: >-
+    HuPR code and paper are public. The released benchmark assets are packaged
+    around the official repository workflow, so OctoSense records the public
+    sources but does not automate repository-specific dataset preparation.
+license:
+  name: ""
+  spdx_id:
+  source_url:
+  redistribution_allowed: false
+  note: ""
+download:
+  allow_automated_download: false
+  requires_explicit_opt_in: true
+  supported_parts: []
+  note: ""
+paper:
+  title: "HuPR: A Benchmark for Human Pose Estimation Using Millimeter Wave Radar"
+  url: https://openaccess.thecvf.com/content/WACV2023/html/Lee_HuPR_A_Benchmark_for_Human_Pose_Estimation_Using_Millimeter_Wave_WACV_2023_paper.html
+  authors:
+    - Shih-Po Lee
+    - Niraj Prakash Kini
+    - Wen-Hsiao Peng
+    - Ching-Wen Ma
+    - Jenq-Neng Hwang
+  citation_text: >-
+    Lee, S.-P., Kini, N. P., Peng, W.-H., Ma, C.-W., and Hwang, J.-N. HuPR: A
+    Benchmark for Human Pose Estimation Using Millimeter Wave Radar. IEEE/CVF WACV, 2023.
+storage:
+  default_root_subdir: hupr

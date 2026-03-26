@@ -1,0 +1,54 @@
+schema_version: 1
+dataset_id: widar3
+fields:
+  summary: WiFi CSI gesture recognition dataset with canonical Widar3 capture naming.
+  rf_profile:
+    modality: wifi
+    center_freq_hz: 5825000000.0
+    bandwidth_hz: 20000000.0
+    nominal_sample_rate_hz: 1000.0
+    reader: IWL5300Reader
+  variant_policy:
+    selection_contract: explicit_binding
+  task_binding_contract:
+    selection_contract: explicit_binding
+  signal_profile:
+    signal_modality: wifi
+    device_type: IWL5300
+    capture_device: IWL5300
+    reader_id: wifi/iwl5300
+    axis_schema:
+      - time
+      - subc
+      - tx
+      - rx
+    fixed_dims:
+      subc: 30
+      tx: 1
+      rx: 3
+    coord_units:
+      time: s
+      subc: Hz
+  gesture_map:
+    1: Slide
+    2: Push&Pull
+    3: Clap
+    4: Sweep
+    5: Draw-Zigzag(Horizontal)
+    6: Draw-O(Horizontal)
+    7: Draw-N(Horizontal)
+    8: Draw-Rectangle(Horizontal)
+    9: Draw-Triangle(Horizontal)
+    10: Draw-Zigzag(Vertical)
+    11: Draw-N(Vertical)
+    12: Draw-4
+    13: Draw-5
+    14: Draw-7
+    15: Draw-3
+    16: Draw-2
+    17: Draw-9
+    18: Draw-1
+    19: Draw-0
+    20: Draw-6
+    21: Draw-8
+    22: Draw-O(Vertical)

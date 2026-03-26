@@ -1,0 +1,50 @@
+axes:
+  time:
+    target: octo.common.axis.time
+    status: exact
+    source_namespace: reader.xrfv2
+  subc:
+    target: octo.wifi.axis.subc
+    status: exact
+    source_namespace: reader.xrfv2
+  tx:
+    target: octo.common.axis.tx
+    status: exact
+    source_namespace: reader.xrfv2
+  rx:
+    target: octo.common.axis.rx
+    status: exact
+    source_namespace: reader.xrfv2
+fields:
+  dimension_names:
+    target: octo.wifi.representation.dimension_names
+    status: computed
+    source_namespace: reader.xrfv2
+  data_format:
+    target: octo.wifi.representation.data_format
+    status: computed
+    source_namespace: reader.xrfv2
+  center_freq_hz:
+    target: octo.common.field.center_frequency
+    status: exact
+    source_namespace: reader.xrfv2
+  bandwidth_hz:
+    target: octo.common.field.bandwidth
+    status: exact
+    source_namespace: reader.xrfv2
+  num_subc:
+    target: octo.wifi.field.num_subcarriers
+    status: exact
+    source_namespace: reader.xrfv2
+  num_tx:
+    target: octo.wifi.field.num_tx
+    status: exact
+    source_namespace: reader.xrfv2
+  num_rx:
+    target: octo.wifi.field.num_rx
+    status: exact
+    source_namespace: reader.xrfv2
+  timestamp:
+    target: octo.common.field.timestamp_start
+    status: exact
+    source_namespace: reader.xrfv2

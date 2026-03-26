@@ -1,0 +1,8 @@
+variant: home-uplink
+variant_key: home-uplink
+modality: wifi
+environment: home
+direction: uplink
+relpath: csi/dataset_home_276.mat
+preferred_key: csiu_
+class_count: 276

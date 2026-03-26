@@ -1,0 +1,71 @@
+signal:
+  source: data
+  dims: [time, subc, tx, rx]
+axes:
+  time:
+    target: octo.common.axis.time
+    status: exact
+    source_namespace: vendor.nexmon
+  subc:
+    target: octo.wifi.axis.subc
+    status: exact
+    source_namespace: vendor.nexmon
+  tx:
+    target: octo.common.axis.tx
+    status: exact
+    source_namespace: vendor.nexmon
+  rx:
+    target: octo.common.axis.rx
+    status: exact
+    source_namespace: vendor.nexmon
+fields:
+  dimension_names:
+    target: octo.wifi.representation.dimension_names
+    status: computed
+    source_namespace: reader.nexmon
+    description: Reader-declared CSI tensor dimension labels for Nexmon captures.
+  data_format:
+    target: octo.wifi.representation.data_format
+    status: computed
+    source_namespace: reader.nexmon
+    description: Reader-declared CSI payload data format for Nexmon captures.
+  rssi:
+    target: octo.wifi.field.rssi
+    status: exact
+    source_namespace: vendor.nexmon
+    description: RSSI reported in the Nexmon payload header.
+  mac_addr:
+    target: octo.wifi.field.mac_src
+    status: exact
+    source_namespace: vendor.nexmon
+    description: Source MAC address extracted from the Nexmon payload header.
+  sequence_no:
+    target: octo.wifi.field.sequence_number
+    status: exact
+    source_namespace: vendor.nexmon
+    description: Additional 802.11 sequence-number field normalized onto the shared WiFi sequence semantic.
+  frame_control:
+    target: vendor.nexmon.field.frame_control
+    status: vendor_extension
+    source_namespace: vendor.nexmon
+    description: Raw 802.11 frame-control byte kept verbatim as a Nexmon-only vendor extension.
+  core:
+    target: octo.wifi.field.core_num
+    status: exact
+    source_namespace: vendor.nexmon
+    description: Broadcom capture core index reported by Nexmon.
+  spatial_stream:
+    target: vendor.nexmon.field.spatial_stream
+    status: vendor_extension
+    source_namespace: vendor.nexmon
+    description: Broadcom spatial-stream selector kept verbatim as a Nexmon-only vendor extension.
+  channel:
+    target: octo.wifi.field.channel
+    status: computed
+    source_namespace: reader.nexmon
+    description: Reader-decoded channel field derived from the Nexmon payload-header chanspec bits.
+  chip:
+    target: octo.wifi.field.chip_type
+    status: exact
+    source_namespace: vendor.nexmon
+    description: Broadcom chip identifier decoded from the payload header.

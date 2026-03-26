@@ -1,0 +1,10 @@
+reader_id: wifi/esp32
+modality: wifi
+device_family: esp32
+reader_class: ESP32Reader
+hardware_vendor: Espressif
+hardware_family: ESP32 CSI
+source_type: csv
+notes:
+  - Uses ESP32 CSI Toolkit CSV exports.
+  - Multiple ESP32-family chips share the same reader contract.

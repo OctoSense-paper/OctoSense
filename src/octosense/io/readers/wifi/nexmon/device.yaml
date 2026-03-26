@@ -1,0 +1,56 @@
+device_name: Nexmon
+reader_version: "1.0"
+file_extensions:
+  - .pcap
+pcap:
+  frame_header_dtype:
+    - ts_sec
+    - ts_usec
+    - incl_len
+    - orig_len
+  chips:
+    "0100": "4339"
+    "6500": "43455c0"
+    dca6: "43455c0"
+    "0300": "4358"
+    adde: "4358"
+    "34e8": "4366c0"
+    "6a00": "4366c0"
+  hoffset_words: 16
+  bw_sizes:
+    1076: 80
+    1050: 80
+    1024: 80
+    512: 40
+    256: 20
+  bw_subcarriers:
+    80: 256
+    40: 128
+    20: 64
+  payload_offsets:
+    int16_start: 30
+    float_start: 15
+  float_unpack:
+    "4358":
+      nbits: 10
+      autoscale: 1
+      shft: 0
+      fmt: 1
+      nman: 9
+      nexp: 5
+    "4366c0":
+      nbits: 10
+      autoscale: 1
+      shft: 0
+      fmt: 1
+      nman: 12
+      nexp: 6
+merged_extra_fields:
+  - channel
+  - mac_src
+  - chip_type
+  - core_num
+  - frame_control
+  - spatial_stream
+  - dimension_names
+  - data_format

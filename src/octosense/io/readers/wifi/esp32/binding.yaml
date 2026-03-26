@@ -1,0 +1,157 @@
+signal:
+  source: data
+  dims: [time, subc, tx, rx]
+axes:
+  time:
+    target: octo.common.axis.time
+    status: exact
+    source_namespace: vendor.esp32
+  subc:
+    target: octo.wifi.axis.subc
+    status: exact
+    source_namespace: vendor.esp32
+  tx:
+    target: octo.common.axis.tx
+    status: exact
+    source_namespace: vendor.esp32
+  rx:
+    target: octo.common.axis.rx
+    status: exact
+    source_namespace: vendor.esp32
+fields:
+  device_type:
+    target: octo.wifi.provenance.device_type
+    status: computed
+    source_namespace: reader.esp32
+    description: Reader-derived ESP32 device label.
+  format:
+    target: octo.wifi.field.format
+    status: computed
+    source_namespace: reader.esp32
+    description: Reader family label for ESP32 CSV captures.
+  format_type:
+    target: octo.wifi.field.format_type
+    status: computed
+    source_namespace: reader.esp32
+    description: Reader-derived ESP32 CSI payload format identifier.
+  channel:
+    target: octo.wifi.field.channel
+    status: exact
+    source_namespace: vendor.esp32
+    description: WiFi channel reported in the ESP32 CSV row.
+  type:
+    target: octo.wifi.field.frame_type
+    status: exact
+    source_namespace: vendor.esp32
+    description: ESP32 CSV frame type label.
+  id:
+    target: octo.wifi.field.sequence_number
+    status: exact
+    source_namespace: vendor.esp32
+    description: ESP32 frame identifier exposed as one sequence-number source.
+  mac_addr:
+    target: octo.wifi.field.mac_src
+    status: exact
+    source_namespace: vendor.esp32
+    description: Source MAC address reported by the ESP32 capture tool.
+  rssi:
+    target: octo.wifi.field.rssi
+    status: exact
+    source_namespace: vendor.esp32
+    description: RSSI reported by the ESP32 capture tool.
+  rate:
+    target: octo.wifi.field.data_rate
+    status: exact
+    source_namespace: vendor.esp32
+    description: Raw ESP32 rate field from the CSV row.
+  noise_floor:
+    target: octo.wifi.field.noise
+    status: exact
+    source_namespace: vendor.esp32
+    description: ESP32 firmware-reported noise floor in dBm.
+  fft_gain:
+    target: octo.wifi.field.fft
+    status: exact
+    source_namespace: vendor.esp32
+    description: ESP32 FFT gain field reported in the CSV row.
+  agc_gain:
+    target: octo.wifi.field.agc
+    status: exact
+    source_namespace: vendor.esp32
+    description: ESP32 AGC gain field reported in the CSV row.
+  local_timestamp:
+    target: vendor.esp32.field.timestamp_local_counter
+    status: exact
+    source_namespace: vendor.esp32
+    description: ESP32 local timestamp counter preserved on the explicit timestamp_local_counter surface.
+  timestamp:
+    target: octo.common.field.timestamp_start
+    status: computed
+    source_namespace: reader.esp32
+    scale: 1.0e-6
+    description: Canonical ESP32 timestamp after reader-side normalization into seconds.
+  sig_len:
+    target: octo.wifi.field.payload_size
+    status: exact
+    source_namespace: vendor.esp32
+    description: ESP32 signal-length source field from the CSV row.
+  rx_state:
+    target: octo.wifi.field.rx_state
+    status: exact
+    source_namespace: vendor.esp32
+    description: ESP32 receiver-state field from the CSV row.
+  len:
+    target: octo.wifi.field.payload_size
+    status: exact
+    source_namespace: vendor.esp32
+    description: ESP32 payload-length source field from the CSV row.
+  first_word:
+    target: octo.wifi.field.first_word
+    status: exact
+    source_namespace: vendor.esp32
+    description: ESP32 first-word marker from the CSV row.
+  dimension_names:
+    target: octo.wifi.representation.dimension_names
+    status: computed
+    source_namespace: reader.esp32
+    description: Reader-declared CSI tensor dimension labels for ESP32 captures.
+  data_format:
+    target: octo.wifi.representation.data_format
+    status: computed
+    source_namespace: reader.esp32
+    description: Reader-declared CSI payload data format for ESP32 captures.
+  tx_count:
+    target: octo.wifi.field.num_tx
+    status: computed
+    source_namespace: reader.esp32
+    description: Number of transmit chains encoded in the ESP32 CSI tensor.
+  rx_count:
+    target: octo.wifi.field.num_rx
+    status: computed
+    source_namespace: reader.esp32
+    description: Number of receive chains encoded in the ESP32 CSI tensor.
+  subcarrier_count:
+    target: octo.wifi.field.num_subcarriers
+    status: computed
+    source_namespace: reader.esp32
+    description: Number of CSI subcarriers encoded in the ESP32 CSI tensor.
+  sequence_num:
+    target: octo.wifi.field.sequence_number
+    status: computed
+    source_namespace: reader.esp32
+    description: Reader-projected second sequence-number spelling kept aligned with the reference ESP32 field surface.
+  center_freq:
+    target: octo.common.field.center_frequency
+    status: computed
+    source_namespace: reader.esp32
+    description: Canonical ESP32 center frequency in Hz.
+  bandwidth:
+    target: octo.common.field.bandwidth
+    status: computed
+    source_namespace: reader.esp32
+    description: Canonical ESP32 bandwidth in Hz.
+  data:
+    target: octo.wifi.tensor.csi
+    status: exact
+    source_namespace: vendor.esp32
+    description: Raw ESP32 CSI payload array before tensorization.

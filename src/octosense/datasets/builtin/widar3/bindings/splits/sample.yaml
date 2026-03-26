@@ -1,0 +1,17 @@
+name: sample
+supported_variants:
+  - sample
+partitions:
+  train:
+    users: [3, 7, 8, 9]
+    rooms: [3]
+    rx_ids: [1, 3, 5]
+  test:
+    users: [3, 7, 8, 9]
+    rooms: [3]
+    rx_ids: [2, 4, 6]
+val_materialization:
+  source_split: train
+  strategy: stratified_label
+  train_ratio: 0.8
+  seed: 41

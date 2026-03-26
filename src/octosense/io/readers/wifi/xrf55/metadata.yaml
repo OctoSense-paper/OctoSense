@@ -1,0 +1,9 @@
+reader_id: wifi/xrf55
+modality: wifi
+device_family: xrf55
+reader_class: XRF55Reader
+hardware_vendor: Intel
+hardware_family: XRF55 WiFi
+source_type: structured_tensor
+notes:
+  - Parses XRF55 WiFi samples from NPY, NPZ, MAT, H5, and pickle payloads.

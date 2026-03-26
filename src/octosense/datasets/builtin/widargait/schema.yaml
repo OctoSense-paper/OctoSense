@@ -1,0 +1,27 @@
+schema_version: 1
+dataset_id: widargait
+fields:
+  summary: Gait identification dataset derived from the Widar3 release channels.
+  rf_profile:
+    modality: wifi
+    center_freq_hz: 5180000000.0
+    bandwidth_hz: 20000000.0
+    nominal_sample_rate_hz: 1000.0
+  variant_policy:
+    selection_contract: explicit_binding
+  signal_profile:
+    signal_modality: wifi
+    device_type: IWL5300
+    capture_device: IWL5300
+    processed_reader_id: WidarGait-CSI_Processed
+    axis_schema:
+      - time
+      - subc
+      - tx
+      - rx
+    fixed_dims:
+      subc: 30
+      tx: 1
+      rx: 3
+  label_semantics:
+    kind: user_id

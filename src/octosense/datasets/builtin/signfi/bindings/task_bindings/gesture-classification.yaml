@@ -1,0 +1,25 @@
+name: gesture-classification
+task_id: classification/gesture
+label_space:
+  vocabulary:
+    source: dataset.label_mapping
+  id_field: label
+  name_field: label_name
+target_binding:
+  source: metadata_rows
+  fields:
+    class_label: label
+  shape_source:
+    class_label:
+      source: inline
+      value: []
+leakage_keys:
+  - variant
+  - environment
+  - direction
+supported_variants:
+  - home
+  - home-uplink
+  - lab
+  - lab-uplink
+  - lab150

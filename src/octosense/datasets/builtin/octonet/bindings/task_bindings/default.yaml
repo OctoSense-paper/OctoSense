@@ -1,0 +1,22 @@
+# Canonical task_binding selector id. Callers must still pass task_binding="default";
+# this file does not authorize implicit default or singleton fallback.
+name: default
+task_id: classification/activity
+label_space:
+  id_field: label
+  name_field: activity
+  value_fields:
+    - activity
+    - label
+target_binding:
+  source: metadata_rows
+  fields:
+    class_label: label
+  shape_source:
+    class_label:
+      source: inline
+      value: []
+leakage_keys:
+  - subject_id
+  - exp_id
+  - scene_id

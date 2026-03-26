@@ -1,0 +1,42 @@
+dataset_id: csi_bench
+display_name: CSI-Bench
+modalities:
+  - wifi
+supported_variants:
+  - fall-detection
+  - human-activity-recognition
+  - human-identification
+  - localization
+  - motion-source-recognition
+  - proximity-recognition
+  - breathing-detection
+access:
+  kind: manual_only
+  public_urls:
+    - https://github.com/guozhen-jenn-zhu/CSI-Bench-Real-WiFi-Sensing-Benchmark
+    - https://arxiv.org/abs/2505.21866
+  note: >-
+    CSI-Bench is released through the official benchmark repository and
+    associated download channels. OctoSense expects the extracted
+    csi-bench-dataset task layout under the configured dataset root.
+license:
+  name: ""
+  spdx_id:
+  source_url:
+  redistribution_allowed: false
+  note: ""
+download:
+  allow_automated_download: false
+  requires_explicit_opt_in: true
+  supported_parts: []
+  note: ""
+paper:
+  title: "CSI-Bench: A Large-Scale In-the-Wild Dataset for Multi-task WiFi Sensing"
+  url: https://arxiv.org/abs/2505.21866
+  authors:
+    - Guozhen Jenn Zhu
+  citation_text: >-
+    Zhu, G. J. et al. CSI-Bench: A Large-Scale In-the-Wild Dataset for
+    Multi-task WiFi Sensing. NeurIPS Datasets and Benchmarks, 2025.
+storage:
+  default_root_subdir: csi_bench

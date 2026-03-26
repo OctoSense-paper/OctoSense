@@ -1,0 +1,77 @@
+signal:
+  source: data
+  dims: [frame, chirp, adc, ant]
+axes:
+  frame:
+    target: octo.common.axis.frame
+    status: exact
+  chirp:
+    target: octo.common.axis.chirp
+    status: exact
+  adc:
+    target: octo.common.axis.adc
+    status: exact
+  ant:
+    target: octo.common.axis.ant
+    status: exact
+fields:
+  data:
+    target: octo.mmwave.tensor.adc_cube
+    status: exact
+    source_namespace: reader.ti_dca1000
+    description: Decoded FMCW ADC cube materialized from the TI DCA1000 binary capture.
+  adc_cube_layout:
+    target: octo.mmwave.representation.adc_cube_layout
+    status: computed
+    source_namespace: reader.ti_dca1000
+    description: Canonical ADC cube layout emitted by the runtime bridge.
+  num_tx:
+    target: octo.mmwave.field.num_tx
+    status: exact
+    source_namespace: reader.ti_dca1000
+    description: Number of active transmit antennas declared in the radar configuration.
+  num_rx:
+    target: octo.mmwave.field.num_rx
+    status: exact
+    source_namespace: reader.ti_dca1000
+    description: Number of active receive antennas declared in the radar configuration.
+  num_adc_samples:
+    target: octo.mmwave.field.num_adc_samples
+    status: exact
+    source_namespace: reader.ti_dca1000
+    description: Number of fast-time ADC samples captured for each chirp.
+  num_chirps_per_frame:
+    target: octo.mmwave.field.num_chirps_per_frame
+    status: exact
+    source_namespace: reader.ti_dca1000
+    description: Number of chirp loops captured inside one radar frame.
+  num_frames:
+    target: octo.mmwave.field.num_frames
+    status: computed
+    source_namespace: reader.ti_dca1000
+    description: Effective frame count after combining radar-config intent with file-size inference.
+  sample_rate:
+    target: octo.common.field.sample_rate
+    status: exact
+    source_namespace: reader.ti_dca1000
+    description: ADC sample rate normalized to Hz from the radar configuration.
+  center_freq:
+    target: octo.common.field.center_frequency
+    status: exact
+    source_namespace: reader.ti_dca1000
+    description: FMCW carrier center frequency normalized to Hz from the radar configuration.
+  bandwidth:
+    target: octo.common.field.bandwidth
+    status: exact
+    source_namespace: reader.ti_dca1000
+    description: FMCW sweep bandwidth normalized to Hz from the radar configuration.
+  chirp_period:
+    target: octo.mmwave.field.chirp_period
+    status: exact
+    source_namespace: reader.ti_dca1000
+    description: Chirp repetition interval in seconds from the radar configuration.
+  antenna_positions:
+    target: octo.mmwave.field.antenna_positions
+    status: computed
+    source_namespace: reader.ti_dca1000
+    description: Virtual antenna Cartesian positions synthesized from the selected TI array profile.

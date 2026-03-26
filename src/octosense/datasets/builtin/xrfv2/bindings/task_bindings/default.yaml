@@ -1,0 +1,26 @@
+name: default
+task_id: classification/activity
+label_space:
+  vocabulary:
+    source: schema.label_mapping.id_to_action
+  id_field: mapped_action_id
+  name_field: action_name
+  name_source:
+    source: schema.label_mapping.id_to_action
+    key_field: mapped_action_id
+  value_fields:
+    - action_id
+    - mapped_action_id
+    - label
+target_binding:
+  source: metadata_rows
+  fields:
+    class_label: label
+  shape_source:
+    class_label:
+      source: inline
+      value: []
+leakage_keys:
+  - volunteer_id
+  - scene_id
+  - source_file

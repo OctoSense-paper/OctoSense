@@ -1,0 +1,20 @@
+preset_id: radar/radar_cube_v1
+defaults:
+  range_window: hann
+  doppler_window: hann
+  num_angle_bins: 64
+variants:
+  default:
+    steps:
+      - operator_id: RangeFFT
+        params:
+          axis: adc
+          window: $range_window
+      - operator_id: DopplerFFT
+        params:
+          axis: chirp
+          window: $doppler_window
+      - operator_id: AngleFFT
+        params:
+          axis: ant
+          num_angle_bins: $num_angle_bins

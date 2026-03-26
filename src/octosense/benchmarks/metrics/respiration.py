@@ -1,0 +1,22 @@
+"""Respiration benchmark metrics."""
+
+from __future__ import annotations
+
+from typing import Any
+
+from octosense.benchmarks.metrics._regression import (
+    mean_absolute_error,
+    root_mean_square_error,
+)
+
+
+def respiration_metrics(predictions: Any, targets: Any) -> dict[str, float]:
+    mae, count = mean_absolute_error(predictions, targets)
+    return {
+        "rmse": root_mean_square_error(predictions, targets),
+        "mae": mae,
+        "count": count,
+    }
+
+
+__all__ = ["respiration_metrics"]

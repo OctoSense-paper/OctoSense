@@ -1,0 +1,115 @@
+axes:
+  time:
+    target: octo.common.axis.time
+    status: exact
+    source_namespace: vendor.atheros
+  subc:
+    target: octo.wifi.axis.subc
+    status: exact
+    source_namespace: vendor.atheros
+  tx:
+    target: octo.common.axis.tx
+    status: exact
+    source_namespace: vendor.atheros
+  rx:
+    target: octo.common.axis.rx
+    status: exact
+    source_namespace: vendor.atheros
+fields:
+  dimension_names:
+    target: octo.wifi.representation.dimension_names
+    status: computed
+    source_namespace: reader.atheros
+    description: Reader-declared axis order for the canonical Atheros CSI tensor.
+  data_format:
+    target: octo.wifi.representation.data_format
+    status: computed
+    source_namespace: reader.atheros
+    description: Reader-declared data layout for the canonical Atheros CSI tensor.
+  timestamp:
+    target: octo.common.field.timestamp_start
+    status: computed
+    source_namespace: reader.atheros
+    scale: 1.0e-6
+    description: Canonical Atheros packet timestamp converted into seconds.
+  timestamp_raw:
+    target: vendor.atheros.field.timestamp_raw
+    status: exact
+    source_namespace: vendor.atheros
+    description: Raw Atheros packet timestamp counter before conversion into seconds.
+  csi_length:
+    target: octo.wifi.field.csi_length
+    status: exact
+    source_namespace: vendor.atheros
+    description: Raw Atheros CSI payload length in bytes.
+  tx_channel:
+    target: octo.wifi.field.channel
+    status: exact
+    source_namespace: vendor.atheros
+    description: Raw Atheros header field carrying the channel index.
+  err_info:
+    target: octo.wifi.field.error_info
+    status: exact
+    source_namespace: vendor.atheros
+    description: Raw Atheros error or status bits.
+  noise_floor:
+    target: octo.wifi.field.noise
+    status: exact
+    source_namespace: vendor.atheros
+    description: Raw firmware noise-floor estimate in dBm.
+  rate:
+    target: octo.wifi.field.data_rate
+    status: exact
+    source_namespace: vendor.atheros
+    description: Raw Atheros packet rate field from the capture header.
+  bandwidth:
+    target: octo.common.field.bandwidth
+    status: computed
+    source_namespace: reader.atheros
+    scale: 1.0e6
+    description: Raw Atheros bandwidth value in MHz after header cleansing.
+  num_tones:
+    target: octo.wifi.field.num_subcarriers
+    status: exact
+    source_namespace: vendor.atheros
+    description: Number of CSI tones reported by the Atheros header.
+  nr:
+    target: octo.wifi.field.num_rx
+    status: exact
+    source_namespace: vendor.atheros
+    description: Number of receive chains reported by the Atheros header.
+  nc:
+    target: octo.wifi.field.num_tx
+    status: exact
+    source_namespace: vendor.atheros
+    description: Number of transmit chains reported by the Atheros header.
+  rssi:
+    target: octo.wifi.field.rssi
+    status: exact
+    source_namespace: vendor.atheros
+    description: Aggregate RSSI reported by the Atheros capture tool.
+  rssi_1:
+    target: octo.wifi.field.rssi_a
+    status: exact
+    source_namespace: vendor.atheros
+    description: Per-chain RSSI reported for receive chain 1.
+  rssi_2:
+    target: octo.wifi.field.rssi_b
+    status: exact
+    source_namespace: vendor.atheros
+    description: Per-chain RSSI reported for receive chain 2.
+  rssi_3:
+    target: octo.wifi.field.rssi_c
+    status: exact
+    source_namespace: vendor.atheros
+    description: Per-chain RSSI reported for receive chain 3.
+  payload_length:
+    target: octo.wifi.field.payload_size
+    status: exact
+    source_namespace: vendor.atheros
+    description: Payload length reported by the Atheros header.
+  csi_matrix:
+    target: octo.wifi.tensor.csi
+    status: exact
+    source_namespace: vendor.atheros
+    description: Raw Atheros CSI matrix before tensorization.

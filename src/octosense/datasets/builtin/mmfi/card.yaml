@@ -1,0 +1,55 @@
+dataset_id: mmfi
+display_name: MM-Fi
+modalities:
+  - wifi
+  - mmwave
+supported_variants:
+  - protocol3
+access:
+  kind: public_download
+  public_urls:
+    - https://drive.google.com/drive/folders/1zDbhfH3BV-xCZVUHmK65EgVV1HMDEYcz?usp=sharing
+  note: >-
+    MM-Fi is publicly released through Google Drive/Baidu links from the official
+    toolbox. OctoSense can use gdown when available for the Google Drive release;
+    the concrete sensing branch is selected outside the dataset family name.
+license:
+  name: Creative Commons Attribution-NonCommercial 4.0 International
+  spdx_id: CC-BY-NC-4.0
+  source_url: https://ntu-aiot-lab.github.io/mm-fi
+  redistribution_allowed: true
+  note: >-
+    The official MM-Fi project page states that MM-Fi is released under CC BY-NC 4.0.
+download:
+  allow_automated_download: true
+  requires_explicit_opt_in: true
+  supported_parts: []
+  sources:
+    - kind: gdown
+      url: https://drive.google.com/drive/folders/1zDbhfH3BV-xCZVUHmK65EgVV1HMDEYcz?usp=sharing
+      note: >-
+        MM-Fi automated download uses the official Google Drive folder published by
+        the dataset authors.
+  note: >-
+    MM-Fi WiFi can be prepared automatically because the official site exposes
+    public download links and an explicit redistribution-allowed license.
+paper:
+  title: "MM-Fi: Multi-Modal Non-Intrusive 4D Human Dataset for Versatile Wireless Sensing"
+  url: https://openreview.net/forum?id=1uAsASS1th
+  authors:
+    - Jianfei Yang
+    - He Huang
+    - Yunjiao Zhou
+    - Xinyan Chen
+    - Yuecong Xu
+    - Shenghai Yuan
+    - Han Zou
+    - Chris Xiaoxuan Lu
+    - Lihua Xie
+  citation_text: >-
+    Yang, J., Huang, H., Zhou, Y., Chen, X., Xu, Y., Yuan, S., Zou, H., Lu, C. X.,
+    and Xie, L. MM-Fi: Multi-Modal Non-Intrusive 4D Human Dataset for Versatile
+    Wireless Sensing. NeurIPS Datasets and Benchmarks, 2023.
+storage:
+  default_root_subdir: mmfi
+  canonical_display_name: MM-Fi

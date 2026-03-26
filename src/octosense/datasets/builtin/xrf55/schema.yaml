@@ -1,0 +1,13 @@
+schema_version: 1
+dataset_id: xrf55
+fields:
+  summary: XRF55 WiFi action analysis dataset.
+  rf_profile:
+    modality: wifi
+    center_freq_hz: 5640000000.0
+    bandwidth_hz: 20000000.0
+  signal_profile:
+    signal_modality: wifi
+    device_type: XRF55 WiFi
+    capture_device: XRF55 WiFi
+    reader_id: wifi/xrf55

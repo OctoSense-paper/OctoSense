@@ -1,0 +1,10 @@
+reader_id: mmwave/hupr_radar_map
+modality: mmwave
+device_family: hupr_radar_map
+reader_class: HUPRRadarMapReader
+hardware_vendor: Texas Instruments
+hardware_family: AWR1843 Radar Map Export
+source_type: pickle_bundle
+notes:
+  - Reads one HuPR radar-map sample from the official pickle bundle layout.
+  - Materializes the canonical range-azimuth-elevation-sensor RadioTensor at runtime.

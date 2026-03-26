@@ -1,0 +1,8 @@
+variant: lab150
+variant_key: lab150
+modality: wifi
+environment: lab
+direction: downlink
+relpath: csi/dataset_lab_150.mat
+preferred_key: csi
+class_count: 150

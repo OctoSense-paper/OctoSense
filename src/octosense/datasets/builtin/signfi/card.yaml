@@ -1,0 +1,44 @@
+dataset_id: signfi
+display_name: SignFi
+modalities:
+  - wifi
+supported_variants:
+  - home
+  - home-uplink
+  - lab
+  - lab-uplink
+  - lab150
+access:
+  kind: manual_only
+  public_urls:
+    - https://github.com/yongsen/SignFi
+  note: >-
+    SignFi is distributed as large MAT archives through the official GitHub page
+    and linked storage mirrors. OctoSense records the public entry point and
+    expects the user to place the downloaded MAT files under the configured root.
+license:
+  name: ""
+  spdx_id:
+  source_url:
+  redistribution_allowed: false
+  note: ""
+download:
+  allow_automated_download: false
+  requires_explicit_opt_in: true
+  supported_parts: []
+  note: ""
+paper:
+  title: "SignFi: Sign Language Recognition Using WiFi"
+  url: https://doi.org/10.1145/3191755
+  authors:
+    - Yongsen Ma
+    - Gang Zhou
+    - Shuangquan Wang
+    - Hongyang Zhao
+    - Woosub Jung
+  citation_text: >-
+    Ma, Y., Zhou, G., Wang, S., Zhao, H., and Jung, W. SignFi: Sign Language
+    Recognition Using WiFi. Proceedings of the ACM on Interactive, Mobile,
+    Wearable and Ubiquitous Technologies, 2018.
+storage:
+  default_root_subdir: signfi

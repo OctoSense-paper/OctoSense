@@ -1,0 +1,46 @@
+name: human-pose
+task_id: pose/human_pose
+label_space:
+  vocabulary:
+    source: inline
+    labels:
+      - joint_0
+      - joint_1
+      - joint_2
+      - joint_3
+      - joint_4
+      - joint_5
+      - joint_6
+      - joint_7
+      - joint_8
+      - joint_9
+      - joint_10
+      - joint_11
+      - joint_12
+      - joint_13
+  id_field: joint_id
+  name_field: joint_name
+  value_fields:
+    - joints
+    - bbox
+target_binding:
+  source: payload
+  fields:
+    pose_keypoints: joints
+    pose_extent: bbox
+  shape_source:
+    pose_keypoints:
+      source: schema.label_semantics.target_schema.joints
+      value:
+        - 14
+        - 2
+    pose_extent:
+      source: schema.label_semantics.target_schema.bbox
+      value:
+        - 4
+leakage_keys:
+  - subject_id
+  - session_id
+  - scene_id
+supported_variants:
+  - default

@@ -1,0 +1,32 @@
+name: gesture
+task_id: classification/gesture
+label_space:
+  vocabulary:
+    source: inline
+    labels:
+      - Slide
+      - Push&Pull
+      - Clap
+      - Sweep
+      - Draw-Zigzag(Horizontal)
+      - Draw-O(Horizontal)
+  id_field: label_id
+  name_field: gesture_name
+  value_fields:
+    - gesture_id
+    - gesture_name
+target_binding:
+  source: metadata_rows
+  fields:
+    class_label: label
+  shape_source:
+    class_label:
+      source: inline
+      value: []
+leakage_keys:
+  - subject_id
+  - session_id
+  - room_id
+supported_variants:
+  - g6
+  - sample

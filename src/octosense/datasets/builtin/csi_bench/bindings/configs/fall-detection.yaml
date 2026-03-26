@@ -1,0 +1,7 @@
+variant: fall-detection
+variant_key: fall-detection
+modality: wifi
+paths:
+  metadata_csv: metadata/sample_metadata.csv
+  label_mapping: metadata/label_mapping.json
+  splits_dir: splits

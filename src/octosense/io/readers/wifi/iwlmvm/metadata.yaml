@@ -1,0 +1,9 @@
+reader_id: wifi/iwlmvm
+modality: wifi
+device_family: iwlmvm
+reader_class: IWLMVMReader
+hardware_vendor: Intel
+hardware_family: iwlmvm AX-series CSI
+source_type: binary_packet_stream
+notes:
+  - Targets Intel AX200 and similar iwlmvm-based captures.

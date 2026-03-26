@@ -1,0 +1,21 @@
+name: fall-detection
+task_id: classification/activity
+label_space:
+  vocabulary:
+    source: dataset.label_mapping
+  id_field: label
+  name_field: label_name
+target_binding:
+  source: metadata_rows
+  fields:
+    class_label: label
+  shape_source:
+    class_label:
+      source: inline
+      value: []
+leakage_keys:
+  - date
+  - user_name
+  - clip_index
+supported_variants:
+  - default

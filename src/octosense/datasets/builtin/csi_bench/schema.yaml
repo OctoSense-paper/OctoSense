@@ -1,0 +1,29 @@
+schema_version: 1
+dataset_id: csi_bench
+fields:
+  summary: Multi-task WiFi sensing benchmark dataset.
+  rf_profile:
+    modality: wifi
+    center_freq_hz:
+    bandwidth_hz: 20000000.0
+    nominal_sample_rate_hz:
+  rf_profile_value_contract:
+    nullable_fields:
+      - center_freq_hz
+      - nominal_sample_rate_hz
+  signal_profile:
+    signal_modality: wifi
+    device_type: WiFi CSI
+    reader_id_prefix: wifi/csi_bench_h5
+    capture_device_fallback: WiFi Device
+    coord_units:
+      time: index
+      feature: index
+  storage_layout:
+    root_candidates:
+      - .
+      - CSI-Bench-Real-WiFi-Sensing-Benchmark/csi-bench-dataset
+      - csi-bench-dataset
+    task_probe_subdir: FallDetection
+  label_semantics:
+    kind: task_specific

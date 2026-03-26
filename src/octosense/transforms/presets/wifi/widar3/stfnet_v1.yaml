@@ -1,0 +1,287 @@
+preset_id: wifi/widar3/stfnet_v1
+metadata:
+  formats:
+    - POLAR
+defaults:
+  sample_rate: 1000
+  window_size: 256
+  window_step: 10
+  nfft: 1000
+  max_doppler_hz: 60
+  target_time_bins: null
+  apply_sample_zscore: true
+  apply_ppe: true
+  temporal_bandpass_filter:
+    lowpass_cutoff_hz: 60.0
+    highpass_cutoff_hz: 2.0
+    lowpass_order: 6
+    highpass_order: 3
+  ppe_layout:
+    total_dims:
+      - 4
+      - 2119
+      - 121
+      - 1500
+    link_index:
+      - 0
+      - 1
+      - 2
+    subcarrier_index:
+      - 2062
+      - 2064
+      - 2066
+      - 2068
+      - 2070
+      - 2072
+      - 2074
+      - 2076
+      - 2078
+      - 2080
+      - 2082
+      - 2084
+      - 2086
+      - 2088
+      - 2089
+      - 2091
+      - 2093
+      - 2095
+      - 2097
+      - 2099
+      - 2101
+      - 2103
+      - 2105
+      - 2107
+      - 2109
+      - 2111
+      - 2113
+      - 2115
+      - 2117
+      - 2118
+contracts:
+  dense_image_complex:
+    axes:
+      - channel
+      - height
+      - width
+    dtype_kind: complex
+    fixed_sizes: {}
+    layout: BCHW
+  dense_image_real:
+    axes:
+      - channel
+      - height
+      - width
+    dtype_kind: real
+    fixed_sizes: {}
+    layout: BCHW
+  dense_temporal_image_real:
+    axes:
+      - time
+      - channel
+      - height
+      - width
+    dtype_kind: real
+    fixed_sizes: {}
+    layout: BTCHW
+  sequence_real:
+    axes:
+      - time
+      - feature
+    dtype_kind: real
+    fixed_sizes: {}
+    layout: BTF
+variants:
+  dense_image_complex:
+    steps:
+      - operator_id: SubcarrierL1Normalize
+        params: {}
+      - operator_id: AdjacentRxConjugate
+        params: {}
+      - operator_id: TemporalFilter
+        params:
+          sample_rate: $sample_rate
+          lowpass_cutoff_hz: $temporal_bandpass_filter.lowpass_cutoff_hz
+          highpass_cutoff_hz: $temporal_bandpass_filter.highpass_cutoff_hz
+          lowpass_order: $temporal_bandpass_filter.lowpass_order
+          highpass_order: $temporal_bandpass_filter.highpass_order
+      - operator_id: DenseDFSAmplitude
+        params:
+          sample_rate: $sample_rate
+          window_size: $window_size
+          window_step: $window_step
+          nfft: $nfft
+          max_doppler_hz: $max_doppler_hz
+          target_time_bins: $target_time_bins
+          metadata_axes_to_keep:
+            - subc
+      - enabled_if: $apply_sample_zscore
+        operator_id: SampleZScoreNormalize
+        params: {}
+      - operator_id: WiFiDenseDFSComplexProjector
+        params:
+          apply_ppe: $apply_ppe
+          ppe_layout: $ppe_layout
+          metadata_axes_to_keep:
+            - time_bin
+            - freq_bin
+            - subc
+            - link
+      - operator_id: AutoAlign
+        params:
+          model_or_contract: $output_contract
+          channel_axes:
+            - subc
+            - link
+          height_axis: time_bin
+          width_axis: freq_bin
+          value: identity
+  dense_image_real:
+    steps:
+      - operator_id: SubcarrierL1Normalize
+        params: {}
+      - operator_id: AdjacentRxConjugate
+        params: {}
+      - operator_id: TemporalFilter
+        params:
+          sample_rate: $sample_rate
+          lowpass_cutoff_hz: $temporal_bandpass_filter.lowpass_cutoff_hz
+          highpass_cutoff_hz: $temporal_bandpass_filter.highpass_cutoff_hz
+          lowpass_order: $temporal_bandpass_filter.lowpass_order
+          highpass_order: $temporal_bandpass_filter.highpass_order
+      - operator_id: DenseDFSAmplitude
+        params:
+          sample_rate: $sample_rate
+          window_size: $window_size
+          window_step: $window_step
+          nfft: $nfft
+          max_doppler_hz: $max_doppler_hz
+          target_time_bins: $target_time_bins
+          metadata_axes_to_keep:
+            - subc
+      - enabled_if: $apply_sample_zscore
+        operator_id: SampleZScoreNormalize
+        params: {}
+      - operator_id: AutoAlign
+        params:
+          model_or_contract: $output_contract
+          channel_axes:
+            - subc
+            - link
+            - component
+          height_axis: time_bin
+          width_axis: freq_bin
+          value: identity
+  dense_temporal_image_real:
+    steps:
+      - operator_id: SubcarrierL1Normalize
+        params: {}
+      - operator_id: AdjacentRxConjugate
+        params: {}
+      - operator_id: TemporalFilter
+        params:
+          sample_rate: $sample_rate
+          lowpass_cutoff_hz: $temporal_bandpass_filter.lowpass_cutoff_hz
+          highpass_cutoff_hz: $temporal_bandpass_filter.highpass_cutoff_hz
+          lowpass_order: $temporal_bandpass_filter.lowpass_order
+          highpass_order: $temporal_bandpass_filter.highpass_order
+      - operator_id: DenseDFSAmplitude
+        params:
+          sample_rate: $sample_rate
+          window_size: $window_size
+          window_step: $window_step
+          nfft: $nfft
+          max_doppler_hz: $max_doppler_hz
+          target_time_bins: $target_time_bins
+          metadata_axes_to_keep:
+            - subc
+      - enabled_if: $apply_sample_zscore
+        operator_id: SampleZScoreNormalize
+        params: {}
+      - operator_id: AutoAlign
+        params:
+          model_or_contract: $output_contract
+          axis_map:
+            time: time_bin
+            channel:
+              - link
+              - component
+            height: freq_bin
+            width: subc
+          value: identity
+  sequence_real:
+    steps:
+      - operator_id: SubcarrierL1Normalize
+        params: {}
+      - operator_id: AdjacentRxConjugate
+        params: {}
+      - operator_id: TemporalFilter
+        params:
+          sample_rate: $sample_rate
+          lowpass_cutoff_hz: $temporal_bandpass_filter.lowpass_cutoff_hz
+          highpass_cutoff_hz: $temporal_bandpass_filter.highpass_cutoff_hz
+          lowpass_order: $temporal_bandpass_filter.lowpass_order
+          highpass_order: $temporal_bandpass_filter.highpass_order
+      - operator_id: AmplitudePhase
+      - enabled_if: $apply_sample_zscore
+        operator_id: SampleZScoreNormalize
+        params:
+          exclude_axes:
+            - feature
+      - operator_id: AutoAlign
+        params:
+          model_or_contract: $output_contract
+          time_axis: time
+          flatten_axes:
+            - subc
+            - tx
+            - rx
+            - feature
+          value: identity
+backends:
+  cuda:
+    dense_image_complex:
+      axis_map:
+        channel:
+          - subc
+          - link
+        height: time_bin
+        width: freq_bin
+      source_axes:
+        - time_bin
+        - freq_bin
+        - subc
+        - link
+      target_size_axis: height
+      projector_kind: complex
+    dense_image_real:
+      axis_map:
+        channel:
+          - subc
+          - link
+          - component
+        height: time_bin
+        width: freq_bin
+      source_axes:
+        - time_bin
+        - freq_bin
+        - subc
+        - link
+        - component
+      target_size_axis: height
+      projector_kind: amplitude
+    dense_temporal_image_real:
+      axis_map:
+        time: time_bin
+        channel:
+          - link
+          - component
+        height: freq_bin
+        width: subc
+      source_axes:
+        - time_bin
+        - freq_bin
+        - subc
+        - link
+        - component
+      target_size_axis: time
+      projector_kind: amplitude

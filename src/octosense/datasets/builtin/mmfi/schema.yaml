@@ -1,0 +1,62 @@
+schema_version: 1
+dataset_id: mmfi
+fields:
+  summary: Multi-modal RF sensing dataset with WiFi and mmWave branches currently supported.
+  rf_profiles:
+    wifi:
+      sample_subdir: wifi-csi
+      signal_modality: wifi
+      device_type: Atheros CSI Tool
+      reader_id: wifi/mmfi
+      center_freq_hz: 5000000000.0
+      bandwidth_hz: 40000000.0
+      nominal_sample_rate_hz: 320.0
+      axis_schema: [time, subc, tx, rx]
+      time_coord_unit: s
+      coord_units:
+        subc: index
+        tx: index
+        rx: index
+    mmwave:
+      sample_subdir: mmwave
+      signal_modality: mmwave
+      device_type: mmWave point cloud
+      reader_id: mmwave/mmfi
+      center_freq_hz: 60000000000.0
+      bandwidth_hz: 0.0
+      axis_schema: [time, point, feature]
+      time_coord_unit: frame
+      coord_units:
+        point: index
+        feature: index
+  protocol_actions:
+    protocol1: [A02, A03, A04, A05, A13, A14, A17, A18, A19, A20, A21, A22, A23, A27]
+    protocol2: [A01, A06, A07, A08, A09, A10, A11, A12, A15, A16, A24, A25, A26]
+    protocol3:
+      - A01
+      - A02
+      - A03
+      - A04
+      - A05
+      - A06
+      - A07
+      - A08
+      - A09
+      - A10
+      - A11
+      - A12
+      - A13
+      - A14
+      - A15
+      - A16
+      - A17
+      - A18
+      - A19
+      - A20
+      - A21
+      - A22
+      - A23
+      - A24
+      - A25
+      - A26
+      - A27

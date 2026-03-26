@@ -1,0 +1,43 @@
+dataset_id: falldar
+display_name: FallDar
+modalities:
+  - wifi
+supported_variants:
+  - default
+access:
+  kind: manual_only
+  public_urls:
+    - https://doi.org/10.1109/TMC.2022.3188779
+  note: >-
+    The current high-confidence public entry point is the IEEE paper that
+    introduces FallDar. OctoSense does not currently record a separately
+    verifiable public dataset landing page or archive URL for direct download,
+    so data placement remains a user-managed manual step.
+license:
+  name: ""
+  spdx_id:
+  source_url:
+  redistribution_allowed: false
+  note: ""
+download:
+  allow_automated_download: false
+  requires_explicit_opt_in: true
+  supported_parts: []
+  note: >-
+    No separately verified public download endpoint is recorded for FallDar in
+    the current source set. Acquire the data manually from the authors' release
+    channel and place the expected raw_data and metas.csv layout under the
+    configured dataset root.
+paper:
+  title: Rethinking Fall Detection With Wi-Fi
+  url: https://doi.org/10.1109/TMC.2022.3188779
+  authors:
+    - Zheng Yang
+    - Yi Zhang
+    - Qian Zhang
+  citation_text: >-
+    Yang, Z., Zhang, Y., and Zhang, Q. Rethinking Fall Detection With Wi-Fi.
+    IEEE Transactions on Mobile Computing, 2023. This paper introduces the
+    FallDar dataset and system used by the builtin dataset definition.
+storage:
+  default_root_subdir: falldar

@@ -1,0 +1,9 @@
+reader_id: wifi/widargait_processed
+modality: wifi
+device_family: widargait_processed
+reader_class: WidargaitProcessedReader
+hardware_vendor: Intel
+hardware_family: WidarGait processed CSI tensor
+source_type: numpy_array
+notes:
+  - Loads WidarGait CSI_Processed numpy tensors and materializes canonical time-subc-tx-rx RadioTensors.

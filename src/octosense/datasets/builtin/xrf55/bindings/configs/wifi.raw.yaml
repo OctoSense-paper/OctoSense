@@ -1,0 +1,8 @@
+variant: raw
+variant_key: wifi.raw
+modality: wifi
+description: Raw WiFi branch of XRF55.
+signal_metadata:
+  modality: wifi
+  reader_id: wifi/xrf55
+  capture_device: XRF55 WiFi

@@ -1,0 +1,9 @@
+reader_id: wifi/csi_bench_h5
+modality: wifi
+device_family: csi_bench_h5
+reader_class: CSIBenchH5Reader
+hardware_vendor: Generic
+hardware_family: CSI-Bench H5
+source_type: hdf5
+notes:
+  - Loads the first declared dataset payload from CSI-Bench H5 sample files.

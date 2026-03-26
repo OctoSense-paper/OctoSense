@@ -1,0 +1,58 @@
+axes:
+  time:
+    target: octo.common.axis.time
+    status: exact
+    source_namespace: reader.widargait_processed
+  subc:
+    target: octo.wifi.axis.subc
+    status: exact
+    source_namespace: reader.widargait_processed
+  tx:
+    target: octo.common.axis.tx
+    status: exact
+    source_namespace: reader.widargait_processed
+  rx:
+    target: octo.common.axis.rx
+    status: exact
+    source_namespace: reader.widargait_processed
+fields:
+  dimension_names:
+    target: octo.wifi.representation.dimension_names
+    status: computed
+    source_namespace: reader.widargait_processed
+    description: Reader-declared canonical dimension order for processed WidarGait CSI tensors.
+  data_format:
+    target: octo.wifi.representation.data_format
+    status: computed
+    source_namespace: reader.widargait_processed
+    description: Reader-declared canonical numeric layout for processed WidarGait CSI tensors.
+  timestamp:
+    target: octo.common.field.timestamp_start
+    status: exact
+    source_namespace: reader.widargait_processed
+    description: Processed tensor timeline origin in seconds.
+  center_freq_hz:
+    target: octo.common.field.center_frequency
+    status: exact
+    source_namespace: reader.widargait_processed
+    description: Center frequency in Hz for the processed WidarGait tensor.
+  bandwidth_hz:
+    target: octo.common.field.bandwidth
+    status: exact
+    source_namespace: reader.widargait_processed
+    description: Channel bandwidth in Hz for the processed WidarGait tensor.
+  num_subc:
+    target: octo.wifi.field.num_subcarriers
+    status: exact
+    source_namespace: reader.widargait_processed
+    description: Number of subcarriers in the processed WidarGait tensor.
+  num_tx:
+    target: octo.wifi.field.num_tx
+    status: exact
+    source_namespace: reader.widargait_processed
+    description: Number of transmit streams in the processed WidarGait tensor.
+  num_rx:
+    target: octo.wifi.field.num_rx
+    status: exact
+    source_namespace: reader.widargait_processed
+    description: Number of receive streams in the processed WidarGait tensor.

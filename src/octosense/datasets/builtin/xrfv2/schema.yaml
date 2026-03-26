@@ -1,0 +1,83 @@
+schema_version: 1
+dataset_id: xrfv2
+fields:
+  summary: XRF V2 WiFi action summarization dataset.
+  rf_profile:
+    modality: wifi
+    center_freq_hz: 5640000000.0
+    bandwidth_hz: 20000000.0
+  signal_profile:
+    signal_modality: wifi
+    device_type: Wi-Fi
+    capture_device: Wi-Fi
+    reader_id: wifi/xrfv2
+  label_mapping:
+    new_mapping:
+      0: 0
+      1: 1
+      2: 2
+      3: 3
+      4: 4
+      5: 5
+      6: 6
+      7: 7
+      8: 8
+      9: 9
+      10: 10
+      11: 11
+      12: 12
+      13: 13
+      14: 14
+      15: 15
+      16: 16
+      17: 17
+      18: 18
+      19: 19
+      20: 20
+      21: 21
+      22: 22
+      23: 23
+      24: 24
+      25: 24
+      26: 24
+      27: 24
+      28: 24
+      29: 25
+      30: 26
+      31: 27
+      32: 28
+      33: 29
+    id_to_action:
+      0: Stretching
+      1: Pouring Water
+      2: Writing
+      3: Cutting Fruit
+      4: Eating Fruit
+      5: Taking Medicine
+      6: Drinking Water
+      7: Sitting Down
+      8: Turning On/Off Eye Protection Lamp
+      9: Opening/Closing Curtains
+      10: Opening/Closing Windows
+      11: Typing
+      12: Opening Envelope
+      13: Throwing Garbage
+      14: Picking Fruit
+      15: Picking Up Items
+      16: Answering Phone
+      17: Using Mouse
+      18: Wiping Table
+      19: Writing on Blackboard
+      20: Washing Hands
+      21: Using Phone
+      22: Reading
+      23: Watering Plants
+      24: Walking
+      25: Getting Out of Bed
+      26: Standing Up
+      27: Lying Down
+      28: Standing Still
+      29: Lying Still
+  accepted_layouts:
+    - processed
+    - raw_wwadl_open

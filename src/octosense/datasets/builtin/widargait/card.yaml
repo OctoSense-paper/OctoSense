@@ -1,0 +1,41 @@
+dataset_id: widargait
+display_name: WiFi Gait
+modalities:
+  - wifi
+supported_variants:
+  - default
+access:
+  kind: manual_only
+  public_urls:
+    - https://tns.thss.tsinghua.edu.cn/widar3.0/index.html
+  note: >-
+    WidarGait is distributed alongside the Widar3 project resources. Download the
+    gait subset from the official Widar3.0 release channels and place it under
+    the configured dataset root.
+license:
+  name: ""
+  spdx_id:
+  source_url:
+  redistribution_allowed: false
+  note: ""
+download:
+  allow_automated_download: false
+  requires_explicit_opt_in: true
+  supported_parts: []
+  note: ""
+paper:
+  title: "GaitSense: Towards Ubiquitous Gait-Based Human Identification with Wi-Fi"
+  url: https://doi.org/10.1145/3466638
+  authors:
+    - Yi Zhang
+    - Yue Zheng
+    - Guidong Zhang
+    - Kun Qian
+    - Chen Qian
+    - Zheng Yang
+  citation_text: >-
+    Zhang, Y., Zheng, Y., Zhang, G., Qian, K., Qian, C., and Yang, Z. GaitSense:
+    Towards Ubiquitous Gait-Based Human Identification with Wi-Fi. ACM
+    Transactions on Sensor Networks, 2022.
+storage:
+  default_root_subdir: widargait

@@ -1,0 +1,8 @@
+variant: clip
+variant_key: wifi.clip
+modality: wifi
+description: WiFi clip-level branch of XRF V2.
+signal_metadata:
+  modality: wifi
+  reader_id: wifi/xrfv2
+  capture_device: Wi-Fi

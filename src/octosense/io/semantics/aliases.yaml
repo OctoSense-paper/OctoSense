@@ -1,0 +1,9 @@
+aliases:
+  antenna_rx: rx
+  antenna_tx: tx
+modalities:
+  wifi:
+    bandwidth_hz: bandwidth
+    center_freq_hz: center_freq
+    subcarrier_spacing_hz: subcarrier_spacing
+    sample_rate_hz: sample_rate

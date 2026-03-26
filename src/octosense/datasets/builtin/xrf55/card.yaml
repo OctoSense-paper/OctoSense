@@ -1,0 +1,49 @@
+dataset_id: xrf55
+display_name: XRF55
+modalities:
+  - wifi
+supported_variants:
+  - raw
+access:
+  kind: public_download
+  public_urls:
+    - https://www.kaggle.com/datasets/xrfdataset/xrf55
+  note: >-
+    The currently supported OctoSense branch is the raw WiFi release hosted on
+    Kaggle. OctoSense can invoke the kaggle CLI for one-click downloads when
+    Kaggle credentials are configured locally.
+license:
+  name: MIT License
+  spdx_id: MIT
+  source_url: https://github.com/aiotgroup/XRF55-repo
+  redistribution_allowed: true
+  note: >-
+    The official XRF55 repository declares the dataset/project under the MIT
+    License and points users to the official Kaggle dataset release.
+download:
+  allow_automated_download: true
+  requires_explicit_opt_in: true
+  supported_parts: []
+  sources:
+    - kind: kaggle
+      url: https://www.kaggle.com/datasets/xrfdataset/xrf55
+      note: >-
+        XRF55 automated download uses the official Kaggle dataset slug.
+  note: >-
+    XRF55 raw WiFi can be prepared automatically because the official repository
+    documents both the Kaggle source and an explicit redistribution-allowed license.
+paper:
+  title: "XRF55: A Radio Frequency Dataset for Human Indoor Action Analysis"
+  url: https://dl.acm.org/doi/10.1145/3643543
+  authors:
+    - Fei Wang
+    - Yizhe Lv
+    - Mengdie Zhu
+    - Han Ding
+    - Jinsong Han
+  citation_text: >-
+    Wang, F., Lv, Y., Zhu, M., Ding, H., and Han, J. XRF55: A Radio Frequency
+    Dataset for Human Indoor Action Analysis. Proceedings of the ACM on Interactive,
+    Mobile, Wearable and Ubiquitous Technologies, 2024.
+storage:
+  default_root_subdir: xrf55

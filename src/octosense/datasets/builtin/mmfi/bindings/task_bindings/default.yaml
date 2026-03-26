@@ -1,0 +1,23 @@
+name: default
+task_id: classification/activity
+label_space:
+  vocabulary:
+    source: config.actions
+  id_field: label
+  name_field: action
+  value_fields:
+    - action
+    - label
+target_binding:
+  source: metadata_rows
+  fields:
+    class_label: label
+  shape_source:
+    class_label:
+      source: inline
+      value: []
+leakage_keys:
+  - subject
+supported_variants:
+  - wifi.protocol3
+  - mmwave.protocol3

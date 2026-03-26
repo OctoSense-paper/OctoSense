@@ -1,0 +1,26 @@
+fields:
+  dimension_names:
+    target: octo.wifi.representation.dimension_names
+    status: computed
+    source_namespace: reader.csi_bench_h5
+    description: Reader-declared tensor axis names for CSI-Bench H5 payloads.
+  data_format:
+    target: octo.wifi.representation.data_format
+    status: computed
+    source_namespace: reader.csi_bench_h5
+    description: Reader-declared tensor layout for CSI-Bench H5 payloads.
+  center_freq_hz:
+    target: octo.common.field.center_frequency
+    status: exact
+    source_namespace: reader.csi_bench_h5
+    description: Center frequency in Hz when available from dataset schema or caller overrides.
+  bandwidth_hz:
+    target: octo.common.field.bandwidth
+    status: exact
+    source_namespace: reader.csi_bench_h5
+    description: Channel bandwidth in Hz when available from dataset schema or caller overrides.
+  sample_rate_hz:
+    target: octo.common.field.sample_rate
+    status: exact
+    source_namespace: reader.csi_bench_h5
+    description: Nominal sample rate in Hz when available from dataset schema or caller overrides.

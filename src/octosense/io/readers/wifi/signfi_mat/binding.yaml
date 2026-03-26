@@ -1,0 +1,66 @@
+signal:
+  source: data
+  dims: [time, subc, tx, rx]
+axes:
+  time:
+    target: octo.common.axis.time
+    status: exact
+    source_namespace: reader.signfi_mat
+  subc:
+    target: octo.wifi.axis.subc
+    status: exact
+    source_namespace: reader.signfi_mat
+  tx:
+    target: octo.common.axis.tx
+    status: exact
+    source_namespace: reader.signfi_mat
+  rx:
+    target: octo.common.axis.rx
+    status: exact
+    source_namespace: reader.signfi_mat
+fields:
+  data:
+    target: octo.wifi.tensor.csi
+    status: exact
+    source_namespace: vendor.signfi
+    description: Raw SignFi sample tensor before reader tensorization.
+  dimension_names:
+    target: octo.wifi.representation.dimension_names
+    status: computed
+    source_namespace: reader.signfi_mat
+    description: Reader-declared CSI tensor axis names for SignFi MAT samples.
+  data_format:
+    target: octo.wifi.representation.data_format
+    status: computed
+    source_namespace: reader.signfi_mat
+    description: Reader-declared tensor layout for SignFi MAT samples.
+  center_freq_hz:
+    target: octo.common.field.center_frequency
+    status: exact
+    source_namespace: reader.signfi_mat
+    description: Center frequency in Hz declared by the reader.
+  bandwidth_hz:
+    target: octo.common.field.bandwidth
+    status: exact
+    source_namespace: reader.signfi_mat
+    description: Channel bandwidth in Hz declared by the reader.
+  sample_rate_hz:
+    target: octo.common.field.sample_rate
+    status: exact
+    source_namespace: reader.signfi_mat
+    description: Nominal sample rate in Hz declared by the reader.
+  num_subc:
+    target: octo.wifi.field.num_subcarriers
+    status: exact
+    source_namespace: reader.signfi_mat
+    description: Number of subcarriers stored in the SignFi sample.
+  num_tx:
+    target: octo.wifi.field.num_tx
+    status: exact
+    source_namespace: reader.signfi_mat
+    description: Number of transmit streams in the canonicalized SignFi sample.
+  num_rx:
+    target: octo.wifi.field.num_rx
+    status: exact
+    source_namespace: reader.signfi_mat
+    description: Number of receive chains in the canonicalized SignFi sample.

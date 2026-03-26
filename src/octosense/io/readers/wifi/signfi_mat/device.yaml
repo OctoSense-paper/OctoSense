@@ -1,0 +1,18 @@
+device_name: Intel 5300
+reader_version: "1.0"
+file_extensions:
+  - .mat
+coord_units:
+  time: s
+  subc: index
+  tx: index
+  rx: index
+merged_extra_fields:
+  - dataset
+  - variant
+  - environment
+  - direction
+  - source_key
+  - sample_index
+  - sample_id
+  - label_name

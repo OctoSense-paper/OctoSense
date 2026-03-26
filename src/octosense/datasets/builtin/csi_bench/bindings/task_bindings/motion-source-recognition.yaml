@@ -1,0 +1,22 @@
+name: motion-source-recognition
+modality: wifi
+task_name: MotionSourceRecognition
+task_id: classification/activity
+label_space:
+  vocabulary:
+    source: config.paths.label_mapping
+  id_field: label
+  name_field: label_name
+  value_fields:
+    - label_name
+    - label
+target_binding:
+  source: metadata_rows
+  fields:
+    class_label: label
+  shape_source:
+    class_label:
+      source: inline
+      value: []
+leakage_keys:
+  - user

@@ -1,0 +1,14 @@
+variant: default
+variant_key: default
+modality: mmwave
+description: Default HuPR dataset identity.
+paths:
+  radar_dir: radar_maps
+  file_pattern: "*.pkl"
+payload_keys:
+  horizontal: hori
+  vertical: vert
+  labels: labels
+target_keys:
+  joints: joints
+  bbox: bbox

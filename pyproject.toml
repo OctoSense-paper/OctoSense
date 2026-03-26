@@ -1,0 +1,99 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "octosense"
+version = "0.1.0"
+description = "OctoSense: deep wireless sensing framework."
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+  { name = "OctoSense contributors" },
+]
+keywords = [
+  "wireless-sensing",
+  "rf",
+  "wifi-csi",
+  "mmwave",
+  "benchmarking",
+  "pytorch",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "torch>=2.0",
+  "torchvision>=0.15",
+  "csiread>=1.4.1",
+  "numpy>=1.24",
+  "scipy>=1.10",
+  "h5py>=3.10",
+  "pandas>=3.0",
+  "typing-extensions",
+  "matplotlib>=3.10.8",
+  "pytorch-complex>=0.2.1",
+  "pyyaml>=6.0.3",
+  "einops>=0.8",
+  "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+docs = [
+  "sphinx>=7.2",
+  "myst-parser>=2.0",
+  "furo>=2024.0",
+  "sphinx-copybutton>=0.5",
+]
+notebooks = [
+  "ipykernel>=7.1.0",
+  "nbconvert>=7.16.6",
+  "nbformat>=5.10.4",
+  "loguru>=0.7.3",
+  "scikit-learn>=1.0",
+  "seaborn>=0.12",
+]
+
+[project.entry-points."octosense.transforms"]
+# Third-party transforms register here, e.g.:
+# MyTransform = "my_package.transforms:MyTransform"
+
+[project.scripts]
+octosense-baseline = "octosense.cli.run:main"
+
+[project.urls]
+Homepage = "https://github.com/OctoSense-paper/OctoSense"
+Repository = "https://github.com/OctoSense-paper/OctoSense"
+Issues = "https://github.com/OctoSense-paper/OctoSense/issues"
+Changelog = "https://github.com/OctoSense-paper/OctoSense/blob/main/CHANGELOG.md"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["octosense"]
+mypy_path = ["src"]
+
+[tool.uv]
+default-groups = ["dev"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/octosense"]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.6",
+    "mypy>=1.10",
+]

@@ -1,0 +1,111 @@
+dataset_id: octonet
+display_name: OctoNet
+modalities:
+  - wifi
+access:
+  kind: public_download
+  public_urls:
+    - https://huggingface.co/datasets/hku-aiot/OctoNet/resolve/main/download_octonet.sh
+    - https://huggingface.co/datasets/hku-aiot/OctoNet
+    - https://aiot-lab.github.io/OctoNet/
+  note: >-
+    OctoNet is publicly hosted on Hugging Face with an official multi-part
+    chunked release. OctoSense uses a shared OctoNet dataset root, while the
+    stable runtime dataset surface is WiFi-only and selected via
+    `modalities=["wifi"]` rather than a redundant public variant even though
+    the upstream release contains other sensing assets.
+license:
+  name: Creative Commons Attribution-NonCommercial 4.0 International
+  spdx_id: CC-BY-NC-4.0
+  source_url: https://huggingface.co/datasets/hku-aiot/OctoNet/raw/main/README.md
+  redistribution_allowed: true
+  note: >-
+    The official Hugging Face dataset card declares the OctoNet dataset under CC BY-NC 4.0.
+download:
+  allow_automated_download: true
+  requires_explicit_opt_in: true
+  handler: octosense.datasets.builtin.octonet.download:download_octonet_dataset
+  supported_parts:
+    - full
+    - sample
+  parts:
+    full:
+      payload:
+        detect_priority: 200
+        marker_paths:
+          - node_2
+          - node_3
+          - node_4
+          - node_5
+          - imu
+          - mocap_csv_final
+          - mocap_pose
+          - vayyar_pickle
+      sources:
+        - kind: huggingface_chunked_tar
+          script_url: https://huggingface.co/datasets/hku-aiot/OctoNet/resolve/main/download_octonet.sh
+          source_url: https://huggingface.co/datasets/hku-aiot/OctoNet
+          base_url: https://huggingface.co/datasets/hku-aiot/OctoNet/resolve/main
+          chunk_names:
+            - Octonet_chunk_aa
+            - Octonet_chunk_ab
+            - Octonet_chunk_ac
+            - Octonet_chunk_ad
+            - Octonet_chunk_ae
+            - Octonet_chunk_af
+            - Octonet_chunk_ag
+            - Octonet_chunk_ah
+            - Octonet_chunk_ai
+            - Octonet_chunk_aj
+            - Octonet_chunk_ak
+            - Octonet_chunk_al
+            - Octonet_chunk_am
+            - Octonet_chunk_an
+            - Octonet_chunk_ao
+            - Octonet_chunk_ap
+          note: >-
+            OctoNet full is prepared from the official Hugging Face chunked release.
+    sample:
+      payload:
+        detect_priority: 100
+        marker_paths:
+          - cut_manual.csv
+          - node_1/wifi
+        required_metadata_columns:
+          - subject_id
+          - exp_id
+          - scene_id
+          - scene_name
+          - sample_kind
+        reuse_selected_source_url: false
+        normalize:
+          mode: single_nested_root
+      sources:
+        - kind: http_archive
+          url_env: OCTOSENSE_OCTONET_SAMPLE_ARCHIVE_URL
+          url: https://huggingface.co/datasets/hku-aiot/OctoNet-WiFi-Sample/resolve/main/octonet_wifi_sample_course_v1.tar.gz
+          note: >-
+            OctoNet sample prefers the published Hugging Face WiFi course archive.
+  note: >-
+    OctoNet full is prepared from the official Hugging Face chunked release into
+    the shared OctoNet dataset root. Callers must pass an explicit part (`full`
+    or `sample`). The sample part prepares only the fixed WiFi course subset
+    from the explicitly configured published archive source.
+paper:
+  title: "OctoNet: A Large-Scale Multi-Modal Dataset for Human Activity Understanding Grounded in Motion-Captured 3D Pose Labels"
+  url: https://openreview.net/forum?id=z3TftXOizf
+  authors:
+    - Dongsheng Yuan
+    - Xie Zhang
+    - Weiying Hou
+    - Sheng Lyu
+    - Yuemin Yu
+    - Luca Jiang-Tao Yu
+    - Chengxiao Li
+    - Chenshu Wu
+  citation_text: >-
+    Yuan, D., Zhang, X., Hou, W., Lyu, S., Yu, Y., Yu, L. J.-T., Li, C., and Wu, C.
+    OctoNet: A Large-Scale Multi-Modal Dataset for Human Activity Understanding
+    Grounded in Motion-Captured 3D Pose Labels. NeurIPS Datasets and Benchmarks, 2025.
+storage:
+  default_root_subdir: octonet

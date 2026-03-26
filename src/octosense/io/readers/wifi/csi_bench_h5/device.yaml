@@ -1,0 +1,22 @@
+device_name: WiFi Device
+reader_version: "1.0"
+file_extensions:
+  - .h5
+  - .hdf5
+coord_units:
+  time: index
+  feature: index
+  channel: index
+  axis_0: index
+  axis_1: index
+  axis_2: index
+  axis_3: index
+  axis_4: index
+merged_extra_fields:
+  - dataset
+  - variant
+  - task_name
+  - split_name
+  - sample_id
+  - label_name
+  - h5_key

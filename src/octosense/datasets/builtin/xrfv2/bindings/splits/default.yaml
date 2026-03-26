@@ -1,0 +1,16 @@
+name: default
+strategy: source_split_plus_stratified_label
+source_split_field: split
+source_splits:
+  train_pool: train
+  heldout: test
+train_val:
+  strategy: stratified_label
+  seed: 41
+  partitions:
+    - split: train
+      ratio: 0.8
+    - split: val
+      ratio: 0.2
+heldout:
+  split: test

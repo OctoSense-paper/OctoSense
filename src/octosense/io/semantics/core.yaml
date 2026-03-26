@@ -1,0 +1,130 @@
+axes:
+  octo.common.axis.time:
+    code: TIME
+    preferred_name: time
+    category: temporal
+    unit: s
+    status: stable
+    description: Temporal packet or frame axis shared across RF modalities.
+  octo.common.axis.tx:
+    code: TX
+    preferred_name: tx
+    category: sensor_index
+    status: stable
+    description: Transmit antenna or stream axis.
+  octo.common.axis.rx:
+    code: RX
+    preferred_name: rx
+    category: sensor_index
+    status: stable
+    description: Receive antenna or chain axis.
+  octo.common.axis.ant:
+    code: ANT
+    preferred_name: ant
+    category: sensor_index
+    status: stable
+    description: Generic antenna axis when TX and RX are not separated.
+  octo.common.axis.source:
+    code: SOURCE
+    preferred_name: source
+    category: source_index
+    status: stable
+    description: Generic source or emitter axis.
+  octo.common.axis.mic:
+    code: MIC
+    preferred_name: mic
+    category: sensor_index
+    status: stable
+    description: Microphone axis for acoustic captures.
+  octo.common.axis.channel:
+    code: CHANNEL_AXIS
+    preferred_name: channel_axis
+    category: rf_channel
+    status: stable
+    description: Generic RF channel axis when channel is represented as a tensor dimension.
+  octo.common.axis.sample:
+    code: SAMPLE
+    preferred_name: sample
+    category: waveform_sample
+    unit: s
+    status: stable
+    description: Generic waveform sample axis.
+  octo.common.axis.tap:
+    code: TAP
+    preferred_name: tap
+    category: delay_bin
+    unit: s
+    status: stable
+    description: Delay-tap axis.
+  octo.common.axis.frame:
+    code: FRAME
+    preferred_name: frame
+    category: frame_index
+    status: stable
+    description: Frame/window axis created by segmentation transforms.
+  octo.common.axis.chirp:
+    code: CHIRP
+    preferred_name: chirp
+    category: radar_pulse
+    status: stable
+    description: Chirp axis for FMCW radar.
+  octo.common.axis.adc:
+    code: ADC
+    preferred_name: adc
+    category: time_sample
+    status: stable
+    description: ADC sample axis for radar or waveform inputs.
+fields:
+  octo.common.field.modality:
+    code: MODALITY
+    preferred_name: modality
+    category: categorical
+    status: stable
+    description: Canonical modality label attached to the sample metadata.
+  octo.common.field.center_frequency:
+    code: CENTER_FREQ
+    preferred_name: center_freq
+    category: physical_quantity
+    unit: Hz
+    status: stable
+    aliases: [center_freq_hz, center_frequency_hz]
+    description: Carrier center frequency normalized to Hz.
+  octo.common.field.bandwidth:
+    code: BANDWIDTH
+    preferred_name: bandwidth
+    category: physical_quantity
+    unit: Hz
+    status: stable
+    aliases: [bandwidth_hz]
+    description: Capture bandwidth normalized to Hz.
+  octo.common.field.sample_rate:
+    code: SAMPLE_RATE
+    preferred_name: sample_rate
+    category: physical_quantity
+    unit: Hz
+    status: stable
+    aliases: [sample_rate_hz]
+    description: Effective packet or sample rate normalized to Hz.
+  octo.common.field.timestamp_start:
+    code: TIMESTAMP_START
+    preferred_name: timestamp
+    category: coordinate
+    unit: s
+    status: stable
+    aliases: [timestamp_start]
+    description: Canonical acquisition timestamp after reader-side normalization.
+provenance:
+  octo.common.provenance.reader:
+    code: READER_ID
+    preferred_name: reader_id
+    category: identifier
+    status: stable
+    description: Canonical OctoSense reader identity string.
+  octo.common.provenance.capture_device:
+    code: CAPTURE_DEVICE
+    preferred_name: capture_device
+    category: identifier
+    status: stable
+    description: Hardware family that produced the capture.
+representation: {}
+tensors: {}

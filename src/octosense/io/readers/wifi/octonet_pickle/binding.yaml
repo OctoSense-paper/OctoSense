@@ -1,0 +1,58 @@
+axes:
+  time:
+    target: octo.common.axis.time
+    status: exact
+    source_namespace: reader.octonet_pickle
+  subc:
+    target: octo.wifi.axis.subc
+    status: exact
+    source_namespace: reader.octonet_pickle
+  tx:
+    target: octo.common.axis.tx
+    status: exact
+    source_namespace: reader.octonet_pickle
+  rx:
+    target: octo.common.axis.rx
+    status: exact
+    source_namespace: reader.octonet_pickle
+fields:
+  dimension_names:
+    target: octo.wifi.representation.dimension_names
+    status: computed
+    source_namespace: reader.octonet_pickle
+    description: Reader-declared canonical dimension order for OctoNet pickle WiFi tensors.
+  data_format:
+    target: octo.wifi.representation.data_format
+    status: computed
+    source_namespace: reader.octonet_pickle
+    description: Reader-declared canonical numeric layout for OctoNet pickle WiFi tensors.
+  timestamp:
+    target: octo.common.field.timestamp_start
+    status: exact
+    source_namespace: reader.octonet_pickle
+    description: Packet timestamp normalized into seconds.
+  center_freq_hz:
+    target: octo.common.field.center_frequency
+    status: exact
+    source_namespace: reader.octonet_pickle
+    description: Center frequency in Hz declared by the reader.
+  bandwidth_hz:
+    target: octo.common.field.bandwidth
+    status: exact
+    source_namespace: reader.octonet_pickle
+    description: Channel bandwidth in Hz declared by the reader.
+  num_subc:
+    target: octo.wifi.field.num_subcarriers
+    status: exact
+    source_namespace: reader.octonet_pickle
+    description: Number of WiFi CSI subcarriers in the payload.
+  num_tx:
+    target: octo.wifi.field.num_tx
+    status: exact
+    source_namespace: reader.octonet_pickle
+    description: Number of transmit streams in the canonicalized payload.
+  num_rx:
+    target: octo.wifi.field.num_rx
+    status: exact
+    source_namespace: reader.octonet_pickle
+    description: Number of receive chains in the canonicalized payload.

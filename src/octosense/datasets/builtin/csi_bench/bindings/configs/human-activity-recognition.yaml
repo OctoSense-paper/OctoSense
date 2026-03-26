@@ -1,0 +1,7 @@
+variant: human-activity-recognition
+variant_key: human-activity-recognition
+modality: wifi
+paths:
+  metadata_csv: metadata/sample_metadata.csv
+  label_mapping: metadata/label_mapping.json
+  splits_dir: splits

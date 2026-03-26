@@ -1,0 +1,67 @@
+axes: {}
+fields:
+  octo.mmwave.field.num_tx:
+    code: NUM_TX
+    preferred_name: num_tx
+    category: shape_metadata
+    status: stable
+    description: Number of active transmit antennas declared in the radar configuration.
+  octo.mmwave.field.num_rx:
+    code: NUM_RX
+    preferred_name: num_rx
+    category: shape_metadata
+    status: stable
+    description: Number of active receive antennas declared in the radar configuration.
+  octo.mmwave.field.num_adc_samples:
+    code: NUM_ADC_SAMPLES
+    preferred_name: num_adc_samples
+    category: shape_metadata
+    status: stable
+    description: Number of fast-time ADC samples captured for each chirp.
+  octo.mmwave.field.num_chirps_per_frame:
+    code: NUM_CHIRPS_PER_FRAME
+    preferred_name: num_chirps_per_frame
+    category: shape_metadata
+    status: stable
+    description: Number of chirp loops captured inside one radar frame.
+  octo.mmwave.field.num_frames:
+    code: NUM_FRAMES
+    preferred_name: num_frames
+    category: shape_metadata
+    status: stable
+    description: Number of radar frames represented by the tensor after reader-side inference.
+  octo.mmwave.field.chirp_period:
+    code: CHIRP_PERIOD
+    preferred_name: chirp_period
+    category: physical_quantity
+    unit: s
+    status: stable
+    description: Chirp repetition interval in seconds.
+  octo.mmwave.field.antenna_positions:
+    code: ANTENNA_POSITIONS
+    preferred_name: antenna_positions
+    category: coordinate
+    unit: m
+    status: stable
+    description: Virtual antenna Cartesian positions in metres.
+provenance: {}
+representation:
+  octo.mmwave.representation.adc_cube_layout:
+    code: ADC_CUBE_LAYOUT
+    preferred_name: adc_cube_layout
+    category: tensor_layout
+    status: stable
+    description: Canonical FMCW ADC cube layout ordered as frame, chirp, adc sample, and antenna axes.
+tensors:
+  octo.mmwave.tensor.adc_cube:
+    code: ADC_CUBE
+    preferred_name: adc_cube
+    category: radar_tensor
+    dtype: complex64
+    status: stable
+    axis_semantics:
+      - octo.common.axis.frame
+      - octo.common.axis.chirp
+      - octo.common.axis.adc
+      - octo.common.axis.ant
+    description: Canonical FMCW ADC tensor organized as frame, chirp, adc, and antenna axes.

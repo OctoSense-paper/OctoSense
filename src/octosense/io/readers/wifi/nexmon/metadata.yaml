@@ -1,0 +1,9 @@
+reader_id: wifi/nexmon
+modality: wifi
+device_family: nexmon
+reader_class: NexmonReader
+hardware_vendor: Broadcom
+hardware_family: Nexmon CSI
+source_type: pcap
+notes:
+  - Parses Nexmon-modified Broadcom chipset CSI PCAP captures.

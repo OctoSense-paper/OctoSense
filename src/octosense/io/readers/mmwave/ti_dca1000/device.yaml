@@ -1,0 +1,47 @@
+device_name: TI_DCA1000
+reader_version: "1.0"
+validation:
+  mmap_threshold_bytes: 104857600
+default_radar_config:
+  num_frames: 0
+  sample_rate: 10000000.0
+  center_freq: 77000000000.0
+  bandwidth: 1798920000.0
+  chirp_period: 0.00016
+presets:
+  IWR1443:
+    num_tx: 3
+    num_rx: 4
+    num_adc_samples: 256
+    num_chirps_per_frame: 128
+    num_frames: 0
+    sample_rate: 10000000.0
+    center_freq: 77000000000.0
+    bandwidth: 1798920000.0
+    chirp_period: 0.00016
+    virtual_array_center_freq_hz: 77000000000.0
+    virtual_array_count: 12
+  AWR1843:
+    num_tx: 3
+    num_rx: 4
+    num_adc_samples: 256
+    num_chirps_per_frame: 64
+    num_frames: 0
+    sample_rate: 10000000.0
+    center_freq: 77000000000.0
+    bandwidth: 3597840000.0
+    chirp_period: 0.0001
+    virtual_array_center_freq_hz: 77000000000.0
+    virtual_array_count: 12
+  IWR6843:
+    num_tx: 3
+    num_rx: 4
+    num_adc_samples: 256
+    num_chirps_per_frame: 64
+    num_frames: 0
+    sample_rate: 10000000.0
+    center_freq: 60000000000.0
+    bandwidth: 3597840000.0
+    chirp_period: 0.0001
+    virtual_array_center_freq_hz: 60000000000.0
+    virtual_array_count: 12

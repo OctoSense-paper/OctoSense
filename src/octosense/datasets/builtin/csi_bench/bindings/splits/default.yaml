@@ -1,0 +1,5 @@
+name: default
+split_ids:
+  train: train_id
+  val: val_id
+  test: test_id

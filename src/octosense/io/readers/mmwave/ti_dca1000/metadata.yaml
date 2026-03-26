@@ -1,0 +1,9 @@
+reader_id: mmwave/ti_dca1000
+modality: mmwave
+device_family: ti_dca1000
+reader_class: TI_DCA1000Reader
+hardware_vendor: Texas Instruments
+hardware_family: DCA1000 EVM
+source_type: raw_int16_binary
+notes:
+  - Reads channel-interleaved FMCW ADC captures from TI DCA1000.

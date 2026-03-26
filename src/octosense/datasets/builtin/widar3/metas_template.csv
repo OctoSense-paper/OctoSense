@@ -1,0 +1,25 @@
+file|room|gesture_list|user|sample_num
+20181109|1|1: Push&Pull; 2: Sweep; 3: Clap; 4:Slide; 5: Draw-Zigzag(Vertical); 6:Draw-N(Vertical);|User1|300
+20181109|1|1: Push&Pull; 2: Sweep; 3: Clap; 4:Slide; 5: Draw-Zigzag(Vertical); 6:Draw-N(Vertical);|User2|500
+20181109|1|1: Push&Pull; 2: Sweep; 3: Clap; 4:Slide; 5: Draw-Zigzag(Vertical); 6:Draw-N(Vertical);|User3|250
+20181112|1|1: Draw-1; 2: Draw-2; 3: Draw-3; 4:Draw-4; 5: Draw-5; 6: Draw-6; 7:Draw-7; 8: Draw-8; 9: Draw-9; 10:Draw-0;|User1,2|250
+20181115|1|1: Push&Pull; 2: Sweep; 3: Clap; 4:Draw-O(Vertical); 5: Draw-Zigzag(Vertical); 6: Draw-N(Vertical);|User1|300
+20181116|1|1: Draw-1; 2: Draw-2; 3: Draw-3; 4:Draw-4; 5: Draw-5; 6: Draw-6; 7:Draw-7; 8: Draw-8; 9: Draw-9; 10:Draw-0;|User1|150
+20181117|2|1: Push&Pull; 2: Sweep; 3: Clap; 4:Draw-O(Vertical); 5: Draw-Zigzag(Vertical); 6: Draw-N(Vertical);|User4|125
+20181118|2|1: Push&Pull; 2: Sweep; 3: Clap; 4:Draw-O(Vertical); 5: Draw-Zigzag(Vertical); 6: Draw-N(Vertical);|User2,3|125
+20181121|1|1: Slide; 2: Draw-O(Horizontal); 3:Draw-Zigzag(Horizontal); 4: Draw-N(Horizontal); 5: Draw-Triangle(Horizontal); 6: Draw-Rectangle(Horizontal);|User1|250
+20181121|1|1: Slide; 2: Draw-O(Horizontal); 3:Draw-Zigzag(Horizontal); 4: Draw-N(Horizontal); 5: Draw-Triangle(Horizontal); 6: Draw-Rectangle(Horizontal);|User2|500
+20181121|1|1: Slide; 2: Draw-O(Horizontal); 3:Draw-Zigzag(Horizontal); 4: Draw-N(Horizontal); 5: Draw-Triangle(Horizontal); 6: Draw-Rectangle(Horizontal);|User3|500
+20181127|2|1: Slide; 2: Draw-O(Horizontal); 3:Draw-Zigzag(Horizontal); 4: Draw-N(Horizontal); 5: Draw-Triangle(Horizontal); 6: Draw-Rectangle(Horizontal);|User2,5|125
+20181128|2|1: Push&Pull; 2: Sweep; 3: Clap; 4:Draw-O(Horizontal); 5: Draw-Zigzag(Horizontal); 6: Draw-N(Horizontal);|User6|125
+20181130|1|1: Push&Pull; 2: Sweep; 3: Clap; 4:Slide; 5: Draw-O(Horizontal); 6:Draw-Zigzag(Horizontal); 7: Draw-N(Horizontal); 8: Draw-Triangle(Horizontal); 9: Draw-Rectangle(Horizontal);|User5,10,11|125
+20181130|1|1: Push&Pull; 2: Sweep; 3: Clap; 4:Slide; 5: Draw-O(Horizontal); 6:Draw-Zigzag(Horizontal); 7: Draw-N(Horizontal); 8: Draw-Triangle(Horizontal); 9: Draw-Rectangle(Horizontal);|User12,13,14|125
+20181130|1|1: Push&Pull; 2: Sweep; 3: Clap; 4:Slide; 5: Draw-O(Horizontal); 6:Draw-Zigzag(Horizontal); 7: Draw-N(Horizontal); 8: Draw-Triangle(Horizontal); 9: Draw-Rectangle(Horizontal);|User15,16,17|125
+20181204|2|1: Push&Pull; 2: Sweep; 3: Clap; 4:Slide; 5: Draw-O(Horizontal); 6:Draw-Zigzag(Horizontal); 7: Draw-N(Horizontal); 8: Draw-Triangle(Horizontal); 9: Draw-Rectangle(Horizontal);|User1|125
+20181205|2|1: Draw-O(Horizontal); 2: Draw-Zigzag(Horizontal); 3: Draw-N(Horizontal); 4: Draw-Triangle(Horizontal); 5: Draw-Rectangle(Horizontal);|User2|125
+20181205|2|1: Slide; 2: Draw-O(Horizontal); 3: Draw-Zigzag(Horizontal); 4: Draw-N(Horizontal); 5: Draw-Triangle(Horizontal); 6: Draw-Rectangle(Horizontal);|User3|125
+20181208|2|1: Push&Pull; 2: Sweep; 3: Clap; 4: Slide;|User2|125
+20181208|2|1: Push&Pull; 2: Sweep; 3: Clap;|User3|125
+20181209|2|1: Push&Pull;|User2|125
+20181209|2|1: Push&Pull; 2: Sweep; 3: Clap; 4: Slide; 5: Draw-O(Horizontal); 6: Draw-Zigzag(Horizontal);|User6|125
+20181211|3|1: Push&Pull; 2: Sweep; 3: Clap; 4: Slide; 5: Draw-O(Horizontal); 6: Draw-Zigzag(Horizontal);|User3,7,8,9|125

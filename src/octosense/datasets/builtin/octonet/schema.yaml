@@ -1,0 +1,12 @@
+schema_version: 1
+dataset_id: octonet
+fields:
+  summary: Large-scale multi-modal activity understanding dataset with a stable WiFi runtime surface.
+  reader_hints:
+    wifi: wifi/octonet_pickle
+  rf_profiles:
+    wifi:
+      center_freq_hz: 5200000000.0
+      bandwidth_hz: 40000000.0
+      capture_device: AX200
+      reader_id: wifi/octonet_pickle

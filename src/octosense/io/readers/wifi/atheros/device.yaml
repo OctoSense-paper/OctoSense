@@ -1,0 +1,40 @@
+device_name: Atheros
+reader_version: "1.0"
+file_extensions:
+  - .dat
+  - .bin
+data_column_names:
+  - timestamp
+  - csi_length
+  - tx_channel
+  - err_info
+  - noise_floor
+  - rate
+  - bandwidth
+  - num_tones
+  - nr
+  - nc
+  - rssi
+  - rssi_1
+  - rssi_2
+  - rssi_3
+  - payload_length
+size_struct_be: ">H"
+size_struct_le: "<H"
+header_struct_be: ">QHHBBBBBBBBBBBH"
+header_struct_le: "<QHHBBBBBBBBBBBH"
+bits_per_symbol: 10
+timestamp_unit_s: 1.0e-6
+bandwidth_mhz_for_zero: 20
+bandwidth_mhz_for_nonzero: 40
+pilot_indices_by_num_tones:
+  114:
+    - 5
+    - 33
+    - 47
+    - 66
+    - 80
+    - 108
+merged_extra_fields:
+  - pilot_indices
+  - pilot_interpolated

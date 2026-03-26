@@ -1,0 +1,40 @@
+device_name: ESP32
+reader_version: "1.0"
+file_extensions:
+  - .csv
+required_fields:
+  - type
+  - data
+  - channel
+timestamp_unit_s: 1.0e-6
+valid_csi_formats:
+  - 106
+  - 114
+  - 128
+  - 234
+  - 256
+  - 384
+format_to_subcarriers:
+  106: 56
+  114: 57
+  128: 64
+  234: 117
+  256: 128
+  384: 192
+default_noise_floor_dbm: -90
+bandwidth_by_max_subc_hz:
+  64: 20000000.0
+  128: 40000000.0
+  999999: 80000000.0
+merged_extra_fields:
+  - device_type
+  - format
+  - format_type
+  - channel
+  - mac_src
+  - dimension_names
+  - data_format
+  - num_tx
+  - num_rx
+  - num_subc
+  - timestamp_local_counter

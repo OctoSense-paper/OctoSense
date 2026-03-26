@@ -1,0 +1,9 @@
+reader_id: wifi/signfi_mat
+modality: wifi
+device_family: signfi_mat
+reader_class: SignFiMATReader
+hardware_vendor: Intel
+hardware_family: Intel 5300 CSI Tool
+source_type: matlab_mat
+notes:
+  - Parses sample-level CSI tensors stored in SignFi MAT archives.

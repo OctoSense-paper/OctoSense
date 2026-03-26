@@ -1,0 +1,23 @@
+schema_version: 1
+dataset_id: falldar
+fields:
+  summary: WiFi-based fall detection dataset.
+  rf_profile:
+    modality: wifi
+    center_freq_hz: 5320000000.0
+    bandwidth_hz: 20000000.0
+    nominal_sample_rate_hz: 1000.0
+    reader: IWL5300Reader
+    capture_device: Intel 5300
+  variant_policy:
+    selection_contract: explicit_binding
+  signal_profile:
+    signal_modality: wifi
+    device_type: Intel 5300
+    capture_device: Intel 5300
+    reader_id: IWL5300Reader-v1.0
+  label_semantics:
+    kind: fall_detection
+    labels:
+      nonfall: 0
+      fall: 1
